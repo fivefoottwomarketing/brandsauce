@@ -1,0 +1,9 @@
+{
+  "name": "brandsauce",
+  "version": "1.0.0",
+  "description": "BrandSauce by Fivefoottwo Marketing — AI-powered brand strategy builder",
+  "private": true,
+  "dependencies": {
+    "@notionhq/client": "^2.2.15"
+  }
+}
