@@ -1,7 +1,7 @@
 const https = require("https");
 
 const TOKEN = "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";
-const CORE_VALUES_DB = "42de464ed01d47eab2c9b88bc5d8efaa";
+const CORE_VALUES_DB = "9b33ee4447b04aec8e7fe5d99f767a60";
 const VOICE_TRAITS_DB = "9e7ca4ac0c684321ad4d1b063cf08d5e";
 
 function notionRequest(path, body) {
