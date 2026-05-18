@@ -1,5 +1,4 @@
 const { Client } = require("@notionhq/client");
-
 // Your Notion database IDs
 const CORE_VALUES_DB = "42de464ed01d47eab2c9b88bc5d8efaa";
 const VOICE_TRAITS_DB = "9e7ca4ac0c684321ad4d1b063cf08d5e";
