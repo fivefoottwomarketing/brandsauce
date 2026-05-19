@@ -376,7 +376,7 @@ function saveBrandHouse(){state.brandKit.vision=document.getElementById("vision"
 function renderPersonality(){
   const bk=state.brandKit;const s=bk.toneSliders;
 const showAll=state.showAllCV;const hasRecs=state.cvRecs.length>0;
-  const displayVT=showAll?NOTION_VOICE_TRAITS:NOTION_VOICE_TRAITS.filter(t=>state.vtRecs.includes(t.name));
+const displayVT=!hasRecs?[]:showAll?NOTION_VOICE_TRAITS:NOTION_VOICE_TRAITS.filter(t=>state.vtRecs.includes(t.name));
   const traitCards=displayVT.map(t=>{
     const sel=bk.voiceTraits.includes(t.id);
     const open=state.openDetail===t.id;
