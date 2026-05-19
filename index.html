@@ -323,9 +323,9 @@ async function getAiRecs(type){
 }
   function renderBrandHouse(){
   const bk=state.brandKit;
-  const showAll=state.showAllCV||state.cvRecs.length===0;
-  const displayCV=showAll?NOTION_CORE_VALUES:NOTION_CORE_VALUES.filter(v=>state.cvRecs.includes(v.name));
-  const valCards=displayCV.map(v=>{
+const showAll=state.showAllCV;const hasRecs=state.cvRecs.length>0;
+    const displayCV=!hasRecs?[]:showAll?NOTION_CORE_VALUES:NOTION_CORE_VALUES.filter(v=>state.cvRecs.includes(v.name));
+    const valCards=displayCV.map(v=>{
     const sel=bk.coreValues.includes(v.id);
     const tags=(v.tags||[]).map(t=>`<span class="tag-pill">${esc(t)}</span>`).join("");
     return`<div class="value-card ${sel?"selected":""}" onclick="toggleValue('${v.id}')">
@@ -375,7 +375,7 @@ function saveBrandHouse(){state.brandKit.vision=document.getElementById("vision"
 
 function renderPersonality(){
   const bk=state.brandKit;const s=bk.toneSliders;
-  const showAll=state.showAllVT||state.vtRecs.length===0;
+const showAll=state.showAllCV;const hasRecs=state.cvRecs.length>0;
   const displayVT=showAll?NOTION_VOICE_TRAITS:NOTION_VOICE_TRAITS.filter(t=>state.vtRecs.includes(t.name));
   const traitCards=displayVT.map(t=>{
     const sel=bk.voiceTraits.includes(t.id);
