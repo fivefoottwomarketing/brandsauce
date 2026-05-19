@@ -198,7 +198,7 @@ function aiBox(id){const out=state.aiOutputs[id];return`<div class="ai-box" id="
 function progressBar(){return`<div class="progress-bar"><div class="progress-fill" style="width:${Math.round(progress()*100)}%"></div></div>`}
 
 async function callClaude(prompt){
-  const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:prompt}]})});
+  const res=await fetch("/api/claude",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:prompt}]})});
   const data=await res.json();
   return data.content?.find(b=>b.type==="text")?.text||"";
 }
