@@ -315,8 +315,7 @@ async function getAiRecs(type){
     const label=isCV?"core values":"brand voice traits";
     const r=await callClaude(`You are a brand strategist. A brand described itself with these keywords: ${keywords.join(", ")}.\n\nFrom the following ${label}, pick the 6 best matches. Return ONLY a JSON array of exact names, nothing else.\nExample format: ["Name1","Name2","Name3","Name4","Name5","Name6"]\n\n${label}:\n${names}`);
     let recs=[];
-    try{const match=r.match(/\[[\s\S]*?\]/);if(match)recs=JSON.parse(match[0])}catch(e){recs=[]}
-    if(isCV)state.cvRecs=recs;else state.vtRecs=recs;
+try{const match=r.match(/\[[\s\S]*?\]/);if(match)recs=JSON.parse(match[0]);console.log("AI response:",r);console.log("Parsed recs:",recs)}catch(e){recs=[];console.log("Parse error:",e)}    if(isCV)state.cvRecs=recs;else state.vtRecs=recs;
   }catch(e){if(isCV)state.cvRecs=[];else state.vtRecs=[]}
   if(isCV)state.cvRecsLoading=false;else state.vtRecsLoading=false;
   saveState();render();
