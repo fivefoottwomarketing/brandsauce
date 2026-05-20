@@ -5,338 +5,300 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BrandSauce | Fivefoottwo Marketing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#F5F0E8;--surface:#FFF;--surface2:#F8F5EF;
   --navy:#1B2A4A;--navy2:#243558;
-  --accent:#C85A3A;--accent2:#B34E30;
-  --text:#1B2A4A;--muted:#6B7A96;
-  --border:rgba(27,42,74,.12);--border2:rgba(27,42,74,.22);
-  --green:#3A7D5C;
-  --font-display:"Playfair Display",Georgia,serif;
-  --font-body:"Inter",system-ui,sans-serif;
-  --radius:8px;--radius-lg:14px;
+  --accent:#C85A3A;--text:#1B2A4A;--muted:#6B7A96;
+  --border:rgba(27,42,74,.1);--border2:rgba(27,42,74,.2);
+  --green:#3A7D5C;--radius:8px;--radius-lg:14px;
+  --font-d:"Playfair Display",Georgia,serif;
+  --font-b:"Inter",system-ui,sans-serif;
 }
-body{background:var(--bg);color:var(--text);font-family:var(--font-body);min-height:100vh;font-size:14px;line-height:1.6}
+body{background:var(--bg);color:var(--text);font-family:var(--font-b);font-size:14px;line-height:1.6;min-height:100vh}
 .app{display:flex;min-height:100vh}
-.sidebar{width:230px;min-height:100vh;background:var(--navy);display:flex;flex-direction:column;padding:28px 0;flex-shrink:0;position:sticky;top:0;height:100vh}
-.logo{padding:0 22px 24px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:16px}
-.logo-top{display:flex;align-items:center;gap:10px}
-.logo-icon{width:32px;height:32px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:16px;color:#fff;font-style:italic;flex-shrink:0}
-.logo-wordmark{font-weight:600;font-size:13px;color:#F5F0E8;letter-spacing:.3px}
-.logo-sub{font-size:10px;color:rgba(245,240,232,.4);text-transform:uppercase;letter-spacing:2px;margin-top:5px}
-.logo-bar{display:block;width:28px;height:2px;background:var(--accent);margin-top:10px}
-.nav-section{padding:0 14px;font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(245,240,232,.3);margin:8px 0 4px 8px}
-.nav-item{display:flex;align-items:center;gap:10px;padding:10px 22px;cursor:pointer;border-left:3px solid transparent;transition:all .15s;color:rgba(245,240,232,.5);font-size:13px}
-.nav-item:hover{color:#F5F0E8;background:rgba(255,255,255,.06)}
-.nav-item.active{color:#F5F0E8;border-left-color:var(--accent);background:rgba(200,90,58,.12);font-weight:500}
-.nav-item.done{color:rgba(245,240,232,.7)}
-.nav-num{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;color:rgba(245,240,232,.55);flex-shrink:0}
+.sidebar{width:220px;background:var(--navy);display:flex;flex-direction:column;padding:24px 0;flex-shrink:0;position:sticky;top:0;height:100vh}
+.logo{padding:0 20px 20px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:12px}
+.logo-mark{font-family:var(--font-b);font-weight:600;font-size:13px;color:#F5F0E8}
+.logo-sub{font-size:10px;color:rgba(245,240,232,.4);text-transform:uppercase;letter-spacing:2px;margin-top:3px}
+.logo-line{display:block;width:24px;height:2px;background:var(--accent);margin-top:8px}
+.nav-label{font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(245,240,232,.3);margin:8px 0 4px 20px}
+.nav-item{display:flex;align-items:center;gap:10px;padding:9px 20px;cursor:pointer;border-left:3px solid transparent;transition:all .15s;color:rgba(245,240,232,.5);font-size:13px}
+.nav-item:hover{color:#F5F0E8;background:rgba(255,255,255,.05)}
+.nav-item.active{color:#F5F0E8;border-left-color:var(--accent);background:rgba(200,90,58,.1);font-weight:500}
+.nav-item.done{color:rgba(245,240,232,.65)}
+.nav-num{width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;color:rgba(245,240,232,.5);flex-shrink:0}
 .nav-item.active .nav-num{background:var(--accent);color:#fff;border-color:var(--accent)}
 .nav-item.done .nav-num{background:var(--green);color:#fff;border-color:var(--green)}
-.sidebar-footer{margin-top:auto;padding:16px 22px;border-top:1px solid rgba(255,255,255,.08)}
-.btn-ghost{background:none;border:1px solid rgba(255,255,255,.15);color:rgba(245,240,232,.45);padding:8px 14px;border-radius:var(--radius);cursor:pointer;font-family:var(--font-body);font-size:12px;width:100%;transition:all .15s;text-align:left}
-.btn-ghost:hover{color:#F5F0E8;border-color:rgba(255,255,255,.28)}
-.main{flex:1;overflow-y:auto;padding:44px 48px;max-width:960px}
-.welcome{max-width:600px;margin:48px 0}
-.eyebrow{font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:8px}
-.eyebrow::before{content:"";display:block;width:20px;height:2px;background:var(--accent)}
-.welcome h1{font-family:var(--font-display);font-size:54px;line-height:1.08;color:var(--navy);margin-bottom:20px;letter-spacing:-.5px}
+.sidebar-foot{margin-top:auto;padding:16px 20px;border-top:1px solid rgba(255,255,255,.08)}
+.btn-ghost{background:none;border:1px solid rgba(255,255,255,.15);color:rgba(245,240,232,.4);padding:7px 12px;border-radius:var(--radius);cursor:pointer;font-family:var(--font-b);font-size:12px;width:100%;text-align:left;transition:all .15s}
+.btn-ghost:hover{color:#F5F0E8}
+.main{flex:1;overflow-y:auto;padding:40px 44px;max-width:900px}
+.welcome{max-width:560px;margin:40px 0}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.eyebrow::before{content:"";display:block;width:18px;height:2px;background:var(--accent)}
+.welcome h1{font-family:var(--font-d);font-size:50px;line-height:1.08;color:var(--navy);margin-bottom:18px;letter-spacing:-.5px}
 .welcome h1 em{font-style:italic;color:var(--accent)}
-.welcome p{color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:36px}
-.stats-strip{display:flex;gap:32px;margin-top:36px;padding-top:32px;border-top:1px solid var(--border)}
-.stat-num{font-family:var(--font-display);font-size:30px;font-weight:700;color:var(--navy);line-height:1}
-.stat-label{font-size:12px;color:var(--muted);margin-top:4px}
-.progress-bar{height:3px;background:var(--border);border-radius:99px;margin-bottom:44px;overflow:hidden}
+.welcome p{color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:32px}
+.progress-bar{height:3px;background:var(--border);border-radius:99px;margin-bottom:40px;overflow:hidden}
 .progress-fill{height:100%;background:var(--accent);border-radius:99px;transition:width .5s ease}
-.ex-header{margin-bottom:32px}
-.ex-tag{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:2.5px;color:var(--accent);display:flex;align-items:center;gap:8px;margin-bottom:12px}
-.ex-tag::before{content:"";display:block;width:18px;height:2px;background:var(--accent)}
-.ex-title{font-family:var(--font-display);font-size:36px;color:var(--navy);margin-bottom:8px;letter-spacing:-.4px}
-.ex-desc{color:var(--muted);font-size:14px;max-width:540px;line-height:1.7}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px;margin-bottom:18px;box-shadow:0 1px 4px rgba(27,42,74,.04)}
+.ex-header{margin-bottom:28px}
+.ex-tag{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:2.5px;color:var(--accent);display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.ex-tag::before{content:"";display:block;width:16px;height:2px;background:var(--accent)}
+.ex-title{font-family:var(--font-d);font-size:34px;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px}
+.ex-desc{color:var(--muted);font-size:14px;max-width:500px;line-height:1.7}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;margin-bottom:16px}
 .card-title{font-size:11px;font-weight:600;color:var(--navy);margin-bottom:4px;text-transform:uppercase;letter-spacing:1.5px}
-.card-desc{color:var(--muted);font-size:13px;margin-bottom:14px;line-height:1.6}
-textarea,input[type="text"]{width:100%;background:var(--surface2);border:1px solid var(--border2);color:var(--text);font-family:var(--font-body);font-size:14px;padding:12px 14px;border-radius:var(--radius);resize:vertical;transition:border-color .15s,box-shadow .15s;line-height:1.6}
-textarea:focus,input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(27,42,74,.07);background:#fff}
+.card-desc{color:var(--muted);font-size:13px;margin-bottom:12px;line-height:1.6}
+textarea,input[type="text"]{width:100%;background:var(--surface2);border:1px solid var(--border2);color:var(--text);font-family:var(--font-b);font-size:14px;padding:11px 13px;border-radius:var(--radius);resize:vertical;line-height:1.6;transition:border-color .15s}
+textarea:focus,input:focus{outline:none;border-color:var(--navy);background:#fff}
 textarea::placeholder,input::placeholder{color:rgba(27,42,74,.28)}
-.kw-section{margin-bottom:20px}
-.kw-section-title{font-size:11px;font-weight:600;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
-.kw-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
-.kw-chip{padding:6px 14px;border-radius:99px;border:1.5px solid var(--border2);font-size:12px;cursor:pointer;transition:all .15s;color:var(--muted);background:var(--surface);font-weight:400;user-select:none}
-.kw-chip:hover{border-color:var(--navy);color:var(--navy)}
-.kw-chip.selected{background:var(--navy);border-color:var(--navy);color:#F5F0E8;font-weight:500}
-.kw-input-row{display:flex;gap:8px;margin-top:8px}
-.kw-input-row input{flex:1;padding:9px 12px;font-size:13px}
-.kw-add-btn{background:var(--navy);color:#F5F0E8;border:none;padding:9px 16px;border-radius:var(--radius);font-family:var(--font-body);font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
-.kw-add-btn:hover{background:var(--navy2)}
-.kw-selected-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;min-height:20px}
-.kw-selected-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(200,90,58,.1);border:1px solid rgba(200,90,58,.25);color:var(--accent);border-radius:99px;padding:4px 10px;font-size:12px;font-weight:500}
-.kw-selected-tag span{cursor:pointer;font-size:14px;line-height:1;opacity:.6}
-.kw-selected-tag span:hover{opacity:1}
-.ai-recs{background:linear-gradient(135deg,rgba(27,42,74,.04),rgba(200,90,58,.04));border:1px solid rgba(200,90,58,.2);border-left:3px solid var(--accent);border-radius:var(--radius-lg);padding:20px;margin-top:16px}
-.ai-recs-header{display:flex;align-items:center;gap:8px;margin-bottom:12px}
-.ai-recs-title{font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:1.5px}
-.ai-recs-subtitle{font-size:12px;color:var(--muted);margin-top:2px}
-.ai-rec-chips{display:flex;flex-wrap:wrap;gap:8px}
-.ai-rec-chip{padding:8px 16px;border-radius:99px;border:1.5px solid rgba(200,90,58,.3);font-size:12px;cursor:pointer;transition:all .15s;color:var(--accent);background:rgba(200,90,58,.06);font-weight:500;display:inline-flex;align-items:center;gap:5px}
-.ai-rec-chip:hover{background:rgba(200,90,58,.15);border-color:var(--accent)}
-.ai-rec-chip.selected{background:var(--accent);color:#fff;border-color:var(--accent)}
-.values-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-top:12px}
-.value-card{background:var(--surface2);border:1.5px solid var(--border2);border-radius:var(--radius);padding:14px;cursor:pointer;transition:all .15s;user-select:none}
-.value-card:hover{border-color:var(--navy);background:#fff;transform:translateY(-1px)}
-.value-card.selected{background:rgba(27,42,74,.05);border-color:var(--navy);border-width:2px}
-.vc-header{display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:5px}
-.vc-title{font-size:13px;font-weight:600;color:var(--navy);line-height:1.3}
-.vc-check{width:17px;height:17px;border-radius:50%;border:1.5px solid var(--border2);flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;font-size:9px;transition:all .15s}
-.value-card.selected .vc-check{background:var(--navy);border-color:var(--navy);color:#fff}
-.vc-desc{font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:7px}
-.vc-tags{display:flex;flex-wrap:wrap;gap:4px}
-.tag-pill{font-size:10px;padding:2px 8px;border-radius:99px;background:rgba(200,90,58,.09);color:var(--accent);border:1px solid rgba(200,90,58,.18);font-weight:500}
-.traits-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin-top:12px}
-.trait-card{background:var(--surface2);border:1.5px solid var(--border2);border-radius:var(--radius);padding:14px;cursor:pointer;transition:all .15s;user-select:none}
-.trait-card:hover{border-color:var(--navy);background:#fff}
-.trait-card.selected{background:rgba(27,42,74,.05);border-color:var(--navy);border-width:2px}
-.tc-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
-.tc-name{font-size:13px;font-weight:600;color:var(--navy)}
-.tc-check{width:17px;height:17px;border-radius:50%;border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:9px;transition:all .15s;flex-shrink:0}
-.trait-card.selected .tc-check{background:var(--navy);border-color:var(--navy);color:#fff}
-.tc-desc{font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:6px}
-.tc-archetypes{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:6px}
-.arch-pill{font-size:10px;padding:2px 7px;border-radius:99px;background:rgba(27,42,74,.07);color:var(--navy);border:1px solid rgba(27,42,74,.14);font-weight:500}
-.tc-expand{font-size:11px;color:var(--accent);cursor:pointer;font-weight:500}
-.tc-expand:hover{text-decoration:underline}
-.detail-drawer{background:#fff;border:1px solid var(--border2);border-radius:var(--radius);padding:18px;margin-top:10px;animation:slideDown .18s ease}
-@keyframes slideDown{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
-.dd-title{font-family:var(--font-display);font-size:18px;color:var(--navy);margin-bottom:6px}
-.dd-desc{font-size:13px;color:var(--text);line-height:1.7;margin-bottom:12px}
-.dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.dd-section-title{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
-.dd-section-title.dos{color:var(--green)}
-.dd-section-title.donts{color:var(--accent)}
-.dd-body{font-size:12px;color:var(--muted);line-height:1.65}
-.dd-example{background:var(--surface2);border-left:3px solid var(--accent);border-radius:4px;padding:10px 12px;margin-top:12px;font-size:12px;color:var(--text);line-height:1.6;font-style:italic}
-.dd-close{float:right;font-size:11px;color:var(--muted);cursor:pointer;margin-top:-2px}
-.dd-close:hover{color:var(--text)}
-.action-row{display:flex;gap:10px;align-items:center;margin-top:14px;flex-wrap:wrap}
-.btn-primary{background:var(--navy);color:#F5F0E8;border:none;padding:13px 28px;border-radius:var(--radius);font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;letter-spacing:.5px;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px}
-.btn-primary:hover{background:var(--navy2);transform:translateY(-1px)}
-.btn-ai{background:transparent;border:1.5px solid var(--accent);color:var(--accent);padding:9px 16px;border-radius:var(--radius);font-family:var(--font-body);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:6px}
+.kw-section{margin-bottom:16px}
+.kw-title{font-size:11px;font-weight:600;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{padding:5px 13px;border-radius:99px;border:1.5px solid var(--border2);font-size:12px;cursor:pointer;transition:all .15s;color:var(--muted);background:var(--surface);user-select:none}
+.chip:hover{border-color:var(--navy);color:var(--navy)}
+.chip.sel{background:var(--navy);border-color:var(--navy);color:#F5F0E8;font-weight:500}
+.kw-row{display:flex;gap:8px;margin-top:8px}
+.kw-row input{flex:1;padding:8px 12px;font-size:13px}
+.kw-add{background:var(--navy);color:#F5F0E8;border:none;padding:8px 14px;border-radius:var(--radius);font-family:var(--font-b);font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap}
+.kw-add:hover{background:var(--navy2)}
+.kw-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.kw-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(200,90,58,.1);border:1px solid rgba(200,90,58,.25);color:var(--accent);border-radius:99px;padding:4px 10px;font-size:12px;font-weight:500}
+.kw-tag span{cursor:pointer;opacity:.6;font-size:14px;line-height:1}
+.kw-tag span:hover{opacity:1}
+.action-row{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.btn-primary{background:var(--navy);color:#F5F0E8;border:none;padding:12px 26px;border-radius:var(--radius);font-family:var(--font-b);font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;text-transform:uppercase;letter-spacing:.5px;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:var(--navy2)}
+.btn-ai{background:transparent;border:1.5px solid var(--accent);color:var(--accent);padding:8px 16px;border-radius:var(--radius);font-family:var(--font-b);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:6px}
 .btn-ai:hover{background:var(--accent);color:#fff}
 .btn-ai:disabled{opacity:.35;cursor:not-allowed}
-.btn-next{background:var(--navy);color:#F5F0E8;border:none;padding:9px 20px;border-radius:var(--radius);font-family:var(--font-body);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;margin-left:auto;letter-spacing:.5px;text-transform:uppercase}
+.btn-next{background:var(--navy);color:#F5F0E8;border:none;padding:8px 18px;border-radius:var(--radius);font-family:var(--font-b);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;margin-left:auto;text-transform:uppercase;letter-spacing:.5px}
 .btn-next:hover{background:var(--navy2)}
-.btn-export{background:transparent;border:1.5px solid var(--navy);color:var(--navy);padding:9px 16px;border-radius:var(--radius);font-family:var(--font-body);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s}
+.btn-export{background:transparent;border:1.5px solid var(--navy);color:var(--navy);padding:8px 16px;border-radius:var(--radius);font-family:var(--font-b);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s}
 .btn-export:hover{background:var(--navy);color:#F5F0E8}
-.ai-box{background:#F8F5EF;border:1px solid rgba(27,42,74,.1);border-left:3px solid var(--accent);border-radius:var(--radius);padding:16px;margin-top:14px;font-size:13px;color:var(--text);line-height:1.75;white-space:pre-wrap;display:none}
-.ai-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.ai-box{background:#F8F5EF;border:1px solid rgba(27,42,74,.1);border-left:3px solid var(--accent);border-radius:var(--radius);padding:14px;margin-top:12px;font-size:13px;color:var(--text);line-height:1.75;white-space:pre-wrap;display:none}
+.ai-lbl{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:6px}
 .spinner{width:13px;height:13px;border:2px solid rgba(200,90,58,.2);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;display:inline-block}
 @keyframes spin{to{transform:rotate(360deg)}}
-.tone-row{display:flex;align-items:center;gap:14px;margin-bottom:14px}
-.tone-label{width:110px;font-size:12px;color:var(--muted);flex-shrink:0}
-.tone-end{width:110px;font-size:12px;color:var(--muted);text-align:right;flex-shrink:0}
-input[type="range"]{flex:1;cursor:pointer;accent-color:var(--navy)}
-.arch-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.arch-chip{padding:7px 15px;border-radius:99px;border:1.5px solid var(--border2);font-size:12px;cursor:pointer;transition:all .15s;color:var(--muted);background:var(--surface);font-weight:400}
+.loading-box{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:24px;text-align:center;color:var(--muted);font-size:13px;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px}
+.results-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:12px}
+.result-card{background:var(--surface2);border:1.5px solid var(--border2);border-radius:var(--radius);padding:14px;cursor:pointer;transition:all .15s;user-select:none}
+.result-card:hover{border-color:var(--navy);background:#fff}
+.result-card.sel{background:rgba(27,42,74,.05);border-color:var(--navy);border-width:2px}
+.rc-head{display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:5px}
+.rc-name{font-size:13px;font-weight:600;color:var(--navy);line-height:1.3}
+.rc-check{width:17px;height:17px;border-radius:50%;border:1.5px solid var(--border2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;transition:all .15s}
+.result-card.sel .rc-check{background:var(--navy);border-color:var(--navy);color:#fff}
+.rc-desc{font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:6px}
+.rc-tags{display:flex;flex-wrap:wrap;gap:4px}
+.tag-pill{font-size:10px;padding:2px 7px;border-radius:99px;background:rgba(200,90,58,.08);color:var(--accent);border:1px solid rgba(200,90,58,.18);font-weight:500}
+.arch-pill{font-size:10px;padding:2px 7px;border-radius:99px;background:rgba(27,42,74,.07);color:var(--navy);border:1px solid rgba(27,42,74,.14);font-weight:500}
+.detail-drawer{background:#fff;border:1px solid var(--border2);border-radius:var(--radius);padding:16px;margin-top:8px}
+.dd-title{font-family:var(--font-d);font-size:17px;color:var(--navy);margin-bottom:5px}
+.dd-desc{font-size:13px;color:var(--text);line-height:1.7;margin-bottom:10px}
+.dd-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dd-lbl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:5px}
+.dd-lbl.dos{color:var(--green)}
+.dd-lbl.donts{color:var(--accent)}
+.dd-body{font-size:12px;color:var(--muted);line-height:1.65}
+.dd-eg{background:var(--surface2);border-left:3px solid var(--accent);padding:8px 12px;margin-top:10px;font-size:12px;color:var(--text);font-style:italic}
+.dd-close{float:right;font-size:11px;color:var(--muted);cursor:pointer}
+.dd-close:hover{color:var(--text)}
+.tc-expand{font-size:11px;color:var(--accent);cursor:pointer;font-weight:500;display:inline-block;margin-top:4px}
+.arch-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.arch-chip{padding:6px 14px;border-radius:99px;border:1.5px solid var(--border2);font-size:12px;cursor:pointer;transition:all .15s;color:var(--muted);background:var(--surface)}
 .arch-chip:hover{border-color:var(--navy);color:var(--navy)}
-.arch-chip.selected{background:var(--navy);border-color:var(--navy);color:#F5F0E8;font-weight:500}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.kit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
-.kit-item{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px}
-.kit-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:6px;font-weight:500}
-.kit-value{font-size:13px;color:var(--text);line-height:1.55}
-.value-badge{display:inline-block;margin:2px 5px 2px 0;font-size:11px;padding:3px 10px;border-radius:99px;background:var(--surface2);border:1px solid var(--border2);color:var(--text)}
-.success-banner{background:rgba(58,125,92,.08);border:1px solid rgba(58,125,92,.2);border-left:3px solid var(--green);border-radius:var(--radius);padding:12px 16px;color:var(--green);font-size:13px;margin-bottom:20px;display:flex;align-items:center;gap:8px;font-weight:500}
-.sel-count{font-size:12px;color:var(--muted);margin-top:8px}
-.show-all-link{font-size:12px;color:var(--accent);cursor:pointer;font-weight:500;margin-top:12px;display:inline-block}
-.show-all-link:hover{text-decoration:underline}
-@media(max-width:768px){.two-col,.kit-grid,.values-grid,.traits-grid,.dd-grid{grid-template-columns:1fr}.sidebar{width:60px}.logo-wordmark,.logo-sub,.logo-bar,.nav-label,.nav-section{display:none}.main{padding:20px}.welcome h1{font-size:38px}}
+.arch-chip.sel{background:var(--navy);border-color:var(--navy);color:#F5F0E8;font-weight:500}
+.tone-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.tone-lbl{width:100px;font-size:12px;color:var(--muted);flex-shrink:0}
+.tone-end{width:100px;font-size:12px;color:var(--muted);text-align:right;flex-shrink:0}
+input[type="range"]{flex:1;cursor:pointer;accent-color:var(--navy)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.kit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+.kit-item{background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px}
+.kit-lbl{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:5px;font-weight:500}
+.kit-val{font-size:13px;color:var(--text);line-height:1.5}
+.v-badge{display:inline-block;margin:2px 4px 2px 0;font-size:11px;padding:3px 9px;border-radius:99px;background:var(--surface2);border:1px solid var(--border2)}
+.success-banner{background:rgba(58,125,92,.08);border:1px solid rgba(58,125,92,.2);border-left:3px solid var(--green);border-radius:var(--radius);padding:11px 14px;color:var(--green);font-size:13px;margin-bottom:18px;display:flex;align-items:center;gap:8px;font-weight:500}
+.sel-count{font-size:12px;color:var(--muted);font-weight:400}
+@media(max-width:700px){.two-col,.kit-grid,.results-grid,.dd-grid{grid-template-columns:1fr}.sidebar{width:56px}.logo-mark,.logo-sub,.logo-line,.nav-label,.nav-txt{display:none}.main{padding:20px}}
 </style>
 </head>
 <body>
 <div class="app" id="app">
   <div class="sidebar">
     <div class="logo">
-      <div class="logo-top"><div class="logo-icon">B</div><div class="logo-wordmark">fivefoottwo</div></div>
-      <div class="logo-sub">BrandSauce</div><span class="logo-bar"></span>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:30px;height:30px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:15px;color:#fff;font-style:italic;flex-shrink:0">B</div>
+        <div class="logo-mark">fivefoottwo</div>
+      </div>
+      <div class="logo-sub">BrandSauce</div>
+      <span class="logo-line"></span>
     </div>
-    <div class="nav-section">Exercises</div>
+    <div class="nav-label">Exercises</div>
     <div id="nav"></div>
-    <div class="sidebar-footer"><button class="btn-ghost" onclick="startOver()">&#8635; Start over</button></div>
+    <div class="sidebar-foot"><button class="btn-ghost" onclick="startOver()">&#8635; Start over</button></div>
   </div>
   <div class="main" id="main"></div>
 </div>
 <script>
-const EXERCISES=[{id:"brandHouse",label:"Brand House",num:1},{id:"personality",label:"Personality",num:2},{id:"positioning",label:"Positioning",num:3},{id:"messaging",label:"Messaging",num:4}];
+const EX=[{id:"brandHouse",label:"Brand House",num:1},{id:"personality",label:"Personality",num:2},{id:"positioning",label:"Positioning",num:3},{id:"messaging",label:"Messaging",num:4}];
 const ARCHETYPES=["Hero","Everyman","Ruler","Creator","Caregiver","Magician","Explorer","Jester","Sage","Rebel","Lover","Innocent"];
-const PERSONALITY_KEYWORDS=["Bold","Warm","Playful","Serious","Innovative","Trustworthy","Empathetic","Energetic","Calm","Inspiring","Direct","Sophisticated","Approachable","Authoritative","Passionate","Authentic","Friendly","Disruptive"];
-const GOAL_KEYWORDS=["Growth","Trust","Community","Leadership","Impact","Creativity","Excellence","Transparency","Inclusivity","Innovation","Integrity","Performance","Productivity","Customer Focus","Sustainability","Collaboration"];
-  const NOTION_CORE_VALUES=[{"id":"do_the_right_thing","name":"Do the Right Thing","description":"Our company's core value is to always strive to do the right thing, embodying honesty, leadership, respect, and teamwork.","tags":["Honesty","Leadership","Respect","Teamwork"]},{"id":"be_mission_critical","name":"Be Mission Critical","description":"Be customer-focused, proactive and work as a team to achieve success.","tags":["Customer-Focused","Proactive","Teamwork"]},{"id":"do_what_you_love","name":"Do What You Love","description":"At our company, we believe in doing what we love, and we are passionate about entrepreneurship and leadership.","tags":["Entrepreneurship","Leadership"]},{"id":"focus_on_whats_important","name":"Focus on what's important.","description":"We prioritize inclusivity, honesty, and leadership in all aspects of entrepreneurship.","tags":["Entrepreneurship","Honesty","Inclusivity","Leadership"]},{"id":"be_bold_entrepreneurial","name":"Be Bold & Entrepreneurial","description":"Empower innovation and drive growth through bold and entrepreneurial leadership.","tags":["Entrepreneurship","Leadership"]},{"id":"lead_with_compassion","name":"Lead with compassion","description":"Our company's core value is to lead with ambition and compassion.","tags":["Ambition","Compassion","Leadership"]},{"id":"fiercely_curious","name":"Fiercely curious","description":"Embrace curiosity and innovation.","tags":["Curious","Innovative"]},{"id":"trusted_communicators","name":"Trusted Communicators","description":"We prioritize transparent and open communication, fostering integrity in all interactions.","tags":["Communication","Integrity","Transparency"]},{"id":"meaningful_inclusion","name":"Meaningful Inclusion","description":"We cultivate a culture of inclusivity, driven by compassion and respect for diverse perspectives.","tags":["Compassion","Inclusivity","Respect"]},{"id":"effortless","name":"Effortless","description":"We optimize productivity to elevate our performance, achieving remarkable outcomes seamlessly.","tags":["Performance","Productivity"]},{"id":"insightful","name":"Insightful","description":"We fuel intelligent curiosity and ambitious innovation, propelling us to uncover new horizons.","tags":["Ambition","Curious","Innovative","Intelligent"]},{"id":"faster_smarter_simpler","name":"Faster, Smarter, Simpler","description":"We drive peak performance through proactive teamwork, constantly refining processes for efficient, impactful outcomes.","tags":["Performance","Proactive","Teamwork"]},{"id":"delightful","name":"Delightful","description":"We reflect our core values of respect, honesty, and compassion, creating meaningful relationships that bring joy to every interaction.","tags":["Compassion","Honesty","Respect"]},{"id":"clever","name":"Clever","description":"We are committed to intelligent creativity, empowering us to devise innovative solutions that shape a brighter future.","tags":["Creativity","Intelligent"]},{"id":"innovative_one_of_a_kind","name":"Innovative, One of a Kind & Game Changing","description":"We embody the spirit of ambition and entrepreneurship, shaping a future defined by revolutionary solutions.","tags":["Ambition","Entrepreneurship","Innovative"]},{"id":"customer_focused_supportive","name":"Customer-focused & Supportive","description":"We prioritize exceptional performance through proactive communication, ensuring our support is a cornerstone of our customers success.","tags":["Communication","Customer-Focused","Performance"]},{"id":"solutions_purpose_built","name":"Solutions That Are Purpose-built, Reliable & Consistent","description":"We proactively engineer solutions that are reliable, consistent, and tailored, upholding our commitment to performance and integrity.","tags":["Integrity","Performance","Proactive"]},{"id":"people_focused","name":"People-focused","description":"We foster relationships built on respect, honesty, transparency, and unwavering integrity.","tags":["Customer-Focused","Honesty","Integrity","Respect","Transparency"]},{"id":"reliable_trustworthy","name":"Reliable & Trustworthy","description":"We are committed to unwavering integrity, fostering transparency and dependability in every facet of our operations.","tags":["Integrity","Reliable","Transparency","Trustworthy"]},{"id":"forward_thinking","name":"Forward-thinking","description":"We embrace an entrepreneurial, proactive, and innovative spirit, fueled by curiosity, as we shape the future with visionary solutions.","tags":["Curious","Entrepreneurship","Innovative","Leadership","Proactive"]},{"id":"simple","name":"Simple","description":"Simplicity and honesty guide our core value, reflecting our commitment to straightforwardness and integrity in all that we do.","tags":["Honesty","Integrity"]},{"id":"intelligent","name":"Intelligent","description":"We foster a curious and innovative mindset, where intelligence guides us to explore new horizons.","tags":["Curious","Innovative","Intelligent"]},{"id":"unified","name":"Unified","description":"We believe in the power of teamwork and inclusivity, where diverse voices harmonize to achieve collective success.","tags":["Inclusivity","Teamwork"]},{"id":"productive","name":"Productive","description":"We take a proactive approach, driving efficiency and achievement as we continuously strive for impactful outcomes.","tags":["Proactive","Productivity"]},{"id":"knowledgeable","name":"Knowledgeable","description":"We are committed to intelligent curiosity, driving us to constantly seek, acquire, and apply wisdom for continuous growth.","tags":["Curious","Intelligent"]},{"id":"be_better","name":"Be Better","description":"We pursue growth proactively, fueled by unwavering honesty and transparency, as we continuously strive to exceed our own standards.","tags":["Honesty","Proactive","Transparency"]},{"id":"actions_speak_louder","name":"Actions speak louder than words","description":"Performance, transparency, and productivity echo the sentiment that our deeds resound louder than words.","tags":["Performance","Productivity","Transparency"]},{"id":"think_bigger","name":"Think Bigger: Believe in the Impossible","description":"We inspire innovation, embrace curiosity, and pursue ambitious possibilities beyond conventional limits.","tags":["Ambition","Curious","Innovative"]},{"id":"be_mindful","name":"Be Mindful, Aware, and Present with Positivity","description":"Compassion, respect, and honesty guide us to be fully present and make meaningful connections.","tags":["Compassion","Honesty","Respect"]},{"id":"let_success_be_your_noise","name":"Let Success Be Your Noise","description":"Proactive entrepreneurship, unwavering productivity, and boundless ambition create a symphony of achievement.","tags":["Ambition","Entrepreneurship","Proactive","Productivity"]},{"id":"celebrate_wins","name":"Celebrate Our Wins, Rally Around the Losses","description":"We foster proactive celebration of victories and a united front in the face of challenges, driving higher performance.","tags":["Performance","Proactive"]},{"id":"partners_come_first","name":"Partners Come First","description":"We place customers first through seamless teamwork and effective communication, fostering lasting partnerships.","tags":["Communication","Customer-Focused","Teamwork"]},{"id":"dream_out_loud","name":"Dream Out Loud","description":"We encourage ambitious, innovative, and curious minds to voice their aspirations boldly and shape groundbreaking futures.","tags":["Ambition","Curious","Innovative"]},{"id":"together_we_rise","name":"Together We Rise","description":"Strong teamwork and dedicated leadership propel us to achieve greater heights as a unified force.","tags":["Leadership","Teamwork"]},{"id":"dare_to_design","name":"Dare to Design the Future","description":"We reflect our ambitious pursuit of innovative creativity that shapes a visionary tomorrow.","tags":["Ambition","Creativity","Innovative"]},{"id":"all_are_welcome","name":"All Are Welcome","description":"We foster a culture of inclusivity and compassion, where every individual unique journey is embraced and celebrated.","tags":["Compassion","Inclusivity"]},{"id":"act_with_integrity","name":"Act With Integrity, Everyday","description":"We promote unwavering honesty and transparency in every action as we uphold the highest ethical standards.","tags":["Integrity","Transparency"]},{"id":"show_up","name":"Show up","description":"We embody reliability, integrity, and trustworthiness in all interactions and commitments we undertake.","tags":["Integrity","Reliable","Trustworthy"]},{"id":"deep_focus","name":"Deep Focus","description":"We merge productivity and customer focus, enabling us to achieve exceptional outcomes with undivided attention.","tags":["Customer-Focused","Productivity"]},{"id":"complexity_simplified","name":"Complexity Simplified","description":"We are guided by efficient organization and enhanced productivity, making intricate challenges yield to clear, effective solutions.","tags":["Organization","Productivity"]},{"id":"mastery","name":"Mastery","description":"We encourage innovative thinking and relentless pursuit of performance excellence to achieve unparalleled expertise.","tags":["Innovative","Performance"]},{"id":"problem_solvers","name":"Problem Solvers","description":"Innovative thinking, creative solutions, and exceptional performance empower us to conquer challenges with ingenuity.","tags":["Creativity","Innovative","Performance"]},{"id":"keep_it_simple","name":"Keep it Simple","description":"We emphasize the power of efficient organization to streamline processes and create straightforward solutions.","tags":["Organization"]},{"id":"treat_every_customer","name":"Treat Every Customer as a Friend","description":"We unite customer focus, inclusivity, and respect to nurture relationships that transcend business and embody genuine connections.","tags":["Customer-Focused","Inclusivity","Respect"]},{"id":"act_with_passion","name":"Act With Passion & Purpose","description":"We channel boundless ambition into passionate action, fueling exceptional performance and meaningful achievements.","tags":["Ambition","Passionate","Performance"]},{"id":"maintain_transparency","name":"Maintain Transparency","description":"We uphold unwavering trustworthiness through transparent communication, fostering relationships built on openness and honesty.","tags":["Communication","Transparency","Trustworthy"]},{"id":"entertain_and_delight","name":"Entertain and Delight","description":"Creating experiences that bring joy and memorable moments.","tags":["Creativity","Entertaining","Fun"]},{"id":"dream_in_daylight","name":"Dream in the daylight","description":"Daring to imagine boldly, even in the light of day.","tags":["Creativity","Curious","Innovative","Passionate"]},{"id":"graceful_mastery","name":"Graceful Mastery","description":"Combining beauty, skill, and performance in everything we do.","tags":["Creativity","Performance","Quality","Teamwork"]},{"id":"wealth_of_expertise","name":"Wealth Of Expertise","description":"Bringing deep experience and knowledge to every engagement.","tags":["Experienced"]},{"id":"we_are_trusted","name":"We are Trusted","description":"Earned through consistency, honesty, and always doing right by our clients.","tags":["Honesty","Reliable","Trustworthy"]},{"id":"customers_come_first","name":"Customers Come First","description":"Putting customers at the center of every decision we make.","tags":["Committed","Customer-Focused"]}];
+const P_KW=["Bold","Warm","Playful","Serious","Innovative","Trustworthy","Empathetic","Energetic","Calm","Inspiring","Direct","Sophisticated","Approachable","Authoritative","Passionate","Authentic","Friendly","Disruptive"];
+const G_KW=["Growth","Trust","Community","Leadership","Impact","Creativity","Excellence","Transparency","Inclusivity","Innovation","Integrity","Performance","Productivity","Customer Focus","Sustainability","Collaboration"];
+  const CV=[{"id":"do_the_right_thing","name":"Do the Right Thing","description":"Always strive to do the right thing, embodying honesty, leadership, respect, and teamwork.","tags":["Honesty","Leadership","Respect","Teamwork"]},{"id":"be_mission_critical","name":"Be Mission Critical","description":"Be customer-focused, proactive and work as a team to achieve success.","tags":["Customer-Focused","Proactive","Teamwork"]},{"id":"do_what_you_love","name":"Do What You Love","description":"Passionate about entrepreneurship and leadership — do what you love.","tags":["Entrepreneurship","Leadership"]},{"id":"focus_on_whats_important","name":"Focus on what's important.","description":"Prioritize inclusivity, honesty, and leadership in all aspects of entrepreneurship.","tags":["Entrepreneurship","Honesty","Inclusivity","Leadership"]},{"id":"be_bold_entrepreneurial","name":"Be Bold & Entrepreneurial","description":"Empower innovation and drive growth through bold and entrepreneurial leadership.","tags":["Entrepreneurship","Leadership"]},{"id":"lead_with_compassion","name":"Lead with compassion","description":"Lead with ambition and compassion.","tags":["Ambition","Compassion","Leadership"]},{"id":"fiercely_curious","name":"Fiercely curious","description":"Embrace curiosity and innovation.","tags":["Curious","Innovative"]},{"id":"trusted_communicators","name":"Trusted Communicators","description":"Prioritize transparent and open communication, fostering integrity in all interactions.","tags":["Communication","Integrity","Transparency"]},{"id":"meaningful_inclusion","name":"Meaningful Inclusion","description":"Cultivate a culture of inclusivity, driven by compassion and respect for diverse perspectives.","tags":["Compassion","Inclusivity","Respect"]},{"id":"effortless","name":"Effortless","description":"Optimize productivity to elevate performance, achieving remarkable outcomes seamlessly.","tags":["Performance","Productivity"]},{"id":"insightful","name":"Insightful","description":"Fuel intelligent curiosity and ambitious innovation to uncover new horizons.","tags":["Ambition","Curious","Innovative","Intelligent"]},{"id":"faster_smarter_simpler","name":"Faster, Smarter, Simpler","description":"Drive peak performance through proactive teamwork and efficient processes.","tags":["Performance","Proactive","Teamwork"]},{"id":"delightful","name":"Delightful","description":"Create meaningful relationships that bring joy and authenticity to every interaction.","tags":["Compassion","Honesty","Respect"]},{"id":"clever","name":"Clever","description":"Committed to intelligent creativity, devising innovative solutions that shape a brighter future.","tags":["Creativity","Intelligent"]},{"id":"innovative_one_of_a_kind","name":"Innovative, One of a Kind & Game Changing","description":"Embody the spirit of ambition and entrepreneurship, shaping a future of revolutionary solutions.","tags":["Ambition","Entrepreneurship","Innovative"]},{"id":"customer_focused_supportive","name":"Customer-focused & Supportive","description":"Prioritize exceptional performance through proactive communication.","tags":["Communication","Customer-Focused","Performance"]},{"id":"solutions_purpose_built","name":"Solutions That Are Purpose-built, Reliable & Consistent","description":"Proactively engineer reliable, consistent, and tailored solutions.","tags":["Integrity","Performance","Proactive"]},{"id":"people_focused","name":"People-focused","description":"Foster relationships built on respect, honesty, transparency, and integrity.","tags":["Customer-Focused","Honesty","Integrity","Respect","Transparency"]},{"id":"reliable_trustworthy","name":"Reliable & Trustworthy","description":"Committed to integrity, fostering transparency and dependability in every operation.","tags":["Integrity","Reliable","Transparency","Trustworthy"]},{"id":"forward_thinking","name":"Forward-thinking","description":"Embrace an entrepreneurial, proactive, innovative spirit fueled by curiosity.","tags":["Curious","Entrepreneurship","Innovative","Leadership","Proactive"]},{"id":"simple","name":"Simple","description":"Simplicity and honesty guide our commitment to straightforwardness and integrity.","tags":["Honesty","Integrity"]},{"id":"intelligent","name":"Intelligent","description":"Foster a curious and innovative mindset to explore new horizons.","tags":["Curious","Innovative","Intelligent"]},{"id":"unified","name":"Unified","description":"The power of teamwork and inclusivity — diverse voices achieving collective success.","tags":["Inclusivity","Teamwork"]},{"id":"productive","name":"Productive","description":"Proactive approach driving efficiency and impactful outcomes.","tags":["Proactive","Productivity"]},{"id":"knowledgeable","name":"Knowledgeable","description":"Committed to intelligent curiosity, seeking and applying wisdom for continuous growth.","tags":["Curious","Intelligent"]},{"id":"be_better","name":"Be Better","description":"Proactive pursuit of growth, fueled by honesty and transparency.","tags":["Honesty","Proactive","Transparency"]},{"id":"actions_speak_louder","name":"Actions speak louder than words","description":"Performance, transparency, and productivity echo louder than words.","tags":["Performance","Productivity","Transparency"]},{"id":"think_bigger","name":"Think Bigger: Believe in the Impossible","description":"Inspire innovation, embrace curiosity, and pursue ambitious possibilities.","tags":["Ambition","Curious","Innovative"]},{"id":"be_mindful","name":"Be Mindful, Aware, and Present","description":"Compassion, respect, and honesty guide us to be fully present.","tags":["Compassion","Honesty","Respect"]},{"id":"let_success_be_your_noise","name":"Let Success Be Your Noise","description":"Proactive entrepreneurship, productivity, and ambition create a symphony of achievement.","tags":["Ambition","Entrepreneurship","Proactive","Productivity"]},{"id":"celebrate_wins","name":"Celebrate Our Wins, Rally Around the Losses","description":"Celebrate victories and unite in the face of challenges.","tags":["Performance","Proactive"]},{"id":"partners_come_first","name":"Partners Come First","description":"Place customers first through teamwork and communication.","tags":["Communication","Customer-Focused","Teamwork"]},{"id":"dream_out_loud","name":"Dream Out Loud","description":"Encourage ambitious, innovative minds to voice their aspirations boldly.","tags":["Ambition","Curious","Innovative"]},{"id":"together_we_rise","name":"Together We Rise","description":"Strong teamwork and leadership propel us to greater heights.","tags":["Leadership","Teamwork"]},{"id":"dare_to_design","name":"Dare to Design the Future","description":"Ambitious pursuit of innovative creativity that shapes a visionary tomorrow.","tags":["Ambition","Creativity","Innovative"]},{"id":"all_are_welcome","name":"All Are Welcome","description":"Foster a culture of inclusivity and compassion where every journey is celebrated.","tags":["Compassion","Inclusivity"]},{"id":"act_with_integrity","name":"Act With Integrity, Everyday","description":"Promote unwavering honesty and transparency in every action.","tags":["Integrity","Transparency"]},{"id":"show_up","name":"Show up","description":"Embody reliability, integrity, and trustworthiness in all commitments.","tags":["Integrity","Reliable","Trustworthy"]},{"id":"deep_focus","name":"Deep Focus","description":"Merge productivity and customer focus for exceptional outcomes.","tags":["Customer-Focused","Productivity"]},{"id":"complexity_simplified","name":"Complexity Simplified","description":"Efficient organization and productivity making complex challenges yield to clear solutions.","tags":["Organization","Productivity"]},{"id":"mastery","name":"Mastery","description":"Innovative thinking and relentless pursuit of performance excellence.","tags":["Innovative","Performance"]},{"id":"problem_solvers","name":"Problem Solvers","description":"Innovative thinking and creative solutions to conquer challenges.","tags":["Creativity","Innovative","Performance"]},{"id":"keep_it_simple","name":"Keep it Simple","description":"Efficient organization to streamline processes and create straightforward solutions.","tags":["Organization"]},{"id":"treat_every_customer","name":"Treat Every Customer as a Friend","description":"Unite customer focus, inclusivity, and respect to nurture genuine connections.","tags":["Customer-Focused","Inclusivity","Respect"]},{"id":"act_with_passion","name":"Act With Passion & Purpose","description":"Channel boundless ambition into passionate action for meaningful achievements.","tags":["Ambition","Passionate","Performance"]},{"id":"maintain_transparency","name":"Maintain Transparency","description":"Uphold trustworthiness through transparent communication.","tags":["Communication","Transparency","Trustworthy"]},{"id":"entertain_and_delight","name":"Entertain and Delight","description":"Creating experiences that bring joy and memorable moments.","tags":["Creativity","Entertaining","Fun"]},{"id":"dream_in_daylight","name":"Dream in the daylight","description":"Daring to imagine boldly, even in the light of day.","tags":["Creativity","Curious","Innovative","Passionate"]},{"id":"graceful_mastery","name":"Graceful Mastery","description":"Combining beauty, skill, and performance in everything we do.","tags":["Creativity","Performance","Quality","Teamwork"]},{"id":"wealth_of_expertise","name":"Wealth Of Expertise","description":"Bringing deep experience and knowledge to every engagement.","tags":["Experienced"]},{"id":"we_are_trusted","name":"We are Trusted","description":"Earned through consistency, honesty, and always doing right by our clients.","tags":["Honesty","Reliable","Trustworthy"]},{"id":"customers_come_first","name":"Customers Come First","description":"Putting customers at the center of every decision.","tags":["Committed","Customer-Focused"]}];
 
-const NOTION_VOICE_TRAITS=[{"id":"inspirational","name":"Inspirational","description":"We are the fire that lights others spirits.","dos":"","donts":"","example":"","archetypes":["Creator","Innocent"],"keywords":["Devoted","Faithful","Supportive"]},{"id":"sensual","name":"Sensual","description":"We provoke intimate feelings and lead with love.","dos":"","donts":"","example":"","archetypes":["Lover"],"keywords":["Caring","Daring","Provocative","Intimate"]},{"id":"playful","name":"Playful","description":"We infuse fun into every sentence we speak. Laugh with us or at us - it's good either way!","dos":"","donts":"","example":"","archetypes":["Jester"],"keywords":["Friendly","Fun","Happy","Unique"]},{"id":"committed","name":"Committed","description":"We will never give up. We chose this path and will see it through.","dos":"Infuse your writing with an unwavering commitment, using enthusiastic and inspiring language to showcase the brand's dedication to its mission.","donts":"Avoid generic or bland language that fails to capture the brand's passion and commitment. Avoid sounding overly aggressive or confrontational.","example":"We wholeheartedly believe in our mission to empower individuals, and we are thrilled to share our passion for positive change with you!","archetypes":["Creator","Explorer","Sage"],"keywords":["Devoted","Faithful","Intense","Relentless"]},{"id":"guiding","name":"Guiding","description":"We take the time to know all the details so we can lead others in the best possible direction.","dos":"","donts":"","example":"","archetypes":["Caregiver","Everyman","Explorer"],"keywords":["Caring","Devoted","Friendly","Guiding"]},{"id":"beneficial","name":"Beneficial","description":"We are focused on communicating value at all times.","dos":"Use positive adjectives that are encouraging and support with examples where possible.","donts":"","example":"","archetypes":["Caregiver","Creator","Everyman"],"keywords":["Caring","Friendly","Honest","Positive"]},{"id":"innovative","name":"Innovative","description":"We ignite the spark of inspiration. When others hear us speak, they know they will hear something they have never heard before.","dos":"Ensure the product and value provided by your service or technology is front and center. Speak firmly toward the future.","donts":"","example":"","archetypes":["Creator","Magician"],"keywords":["Creative","Fearless","Innovative","Unique"]},{"id":"trustworthy","name":"Trustworthy","description":"We are a trusted voice, one that others will always gladly refer to.","dos":"Prioritize clarity and honesty to foster a sense of reliability and dependability in our brand voice.","donts":"Overpromise or exaggerate, as it may compromise the trust we have worked hard to build with our audience.","example":"","archetypes":["Everyman","Sage"],"keywords":["Honest","Real","Respected","Straightforward","Truthful"]},{"id":"mystical","name":"Mystical","description":"We live in a world where magic can happen, and believe in the impossible.","dos":"","donts":"","example":"","archetypes":["Magician"],"keywords":["Extraordinary","Magical","Mysterious","Positive","Unique"]},{"id":"empathetic","name":"Empathetic","description":"We understand our audience and speak to them from our related experience.","dos":"Keep language simple, supportive, educational. Use we often.","donts":"Speak as if you are the only person in the room.","example":"","archetypes":["Caregiver","Everyman"],"keywords":["Caring","Friendly","Honest","Wise"]},{"id":"knowledgeable","name":"Knowledgeable","description":"We go beyond the information to deliver expertise.","dos":"Research thoroughly. Share unique insights. Use clear language. Cite sources. Educate and inform. Answer questions. Back up claims with data.","donts":"Assume expertise where you lack it. Overuse jargon. Mislead or exaggerate. Neglect updates or consistency.","example":"","archetypes":["Explorer","Sage"],"keywords":["Intelligent","Wise"]},{"id":"assured","name":"Assured","description":"We are trusted, supportive and always focused on how we can help others.","dos":"","donts":"","example":"","archetypes":["Innocent","Sage"],"keywords":["Caring","Friendly","Guiding","Truthful"]},{"id":"tenacious","name":"Tenacious","description":"We get things done - done right, well, quickly - always.","dos":"Use words like will. All positive, all the time.","donts":"Never use words that imply you might accomplish something.","example":"","archetypes":["Creator","Explorer","Jester"],"keywords":["Brave","Creative","Fearless","Outspoken"]},{"id":"bold","name":"Bold","description":"We are unafraid to ask the hard questions, think outside the box and take big risks.","dos":"Use urgent, provocative language and sometimes say the unexpected.","donts":"Do not revert to generic sayings, concepts or ideas.","example":"","archetypes":["Explorer","Hero","Rebel","Ruler"],"keywords":["Brave","Creative","Fearless","Outspoken","Straightforward","Unique"]},{"id":"disruptive","name":"Disruptive","description":"We encourage others to think differently.","dos":"Speak outside the norm of what is expected. Use words that engage curiosity.","donts":"","example":"","archetypes":["Creator","Explorer","Rebel"],"keywords":["Brave","Creative","Fearless","Outspoken","Rebel","Unique"]},{"id":"soothing","name":"Soothing","description":"We know it is not always easy and will be here for what you need.","dos":"Use reassuring language. Prioritize clarity. Acknowledge feelings. Use soft words like gentle, steady or supportive.","donts":"Avoid overly technical language. Do not use fearful or alarmist language. Avoid urgency and do not overpromise.","example":"We understand how overwhelming this journey can be.","archetypes":["Caregiver","Lover"],"keywords":["Caring","Guiding","Positive","Supportive"]},{"id":"fearless","name":"Fearless","description":"We are not afraid to say what we think or feel and we inspire others to look up to us.","dos":"Be bold and confident. Stand for something. Take risks. Speak your mind. Be authentic.","donts":"Do not be offensive or disrespectful. Do not be reckless. Do not be inconsistent. Do not ignore feedback.","example":"","archetypes":["Explorer","Hero","Rebel"],"keywords":["Daring","Fun","Grit","Provocative"]},{"id":"informed","name":"Informed","description":"We take the time to obtain the knowledge and are a resource for others.","dos":"Always ensure your content is well-researched and backed by credible sources.","donts":"Avoid using overly complex jargon that may confuse or alienate your audience.","example":"","archetypes":["Creator","Explorer","Magician","Sage"],"keywords":["Honest","Innovative","Intelligent","Straightforward","Truthful"]},{"id":"passionate","name":"Passionate","description":"We are all in. We believe in every word we communicate and inspire others to feel the same.","dos":"Use words that evoke emotion, ignite enthusiasm, and convey a sense of urgency.","donts":"Steer clear of excessive jargon or complex language that may hinder understanding or dilute the passionate tone.","example":"Join us on this exhilarating journey of innovation and let us create a brighter future together!","archetypes":["Caregiver","Creator","Explorer","Lover","Rebel"],"keywords":["Happy","Intense","Loving","Relentless"]},{"id":"friendly","name":"Friendly","description":"We are human and know that life is more than just getting the job done and the people around us are what matter.","dos":"Insert natural happy, fun, relaxed language. Use us and we often.","donts":"Be restricted, short. Do not only speak to facts.","example":"","archetypes":["Caregiver","Everyman"],"keywords":["Friendly","Happy","Honest","Positive","Real","Young"]},{"id":"straightforward","name":"Straightforward","description":"We speak to you not at you, giving us the opportunity to relate, connect and inspire.","dos":"We do choose short, sharp and powerful vernacular.","donts":"We do not mix our words or overuse puns.","example":"","archetypes":["Hero","Innocent","Ruler"],"keywords":["Honest","Innovative","Intelligent","Straightforward","Truthful"]},{"id":"challenging","name":"Challenging","description":"We are direct and compelling in a way that motivates you to be bigger, braver, stronger.","dos":"Lead with questions and mean what we say.","donts":"Do not ramble, use lengthy open-ended language or rhetorical questions.","example":"","archetypes":["Explorer","Rebel"],"keywords":["Brave","Innovative","Rebel","Unique"]},{"id":"authentic","name":"Authentic","description":"We are proud of what we have built, and not afraid to show it. But we are humble and always straightforward, truthful and upfront.","dos":"Talk to the brand and services proudly. Speak knowledgeably with confidence. Keep sentences concise. Use the first person and speak as peers.","donts":"Deliver messages that are inflated, use lofty, unrelateable language. Do not compare to other brands for the sake of showing off.","example":"","archetypes":["Everyman","Hero","Rebel"],"keywords":["Honest","Real","Straightforward","Truthful"]},{"id":"encouraging","name":"Encouraging","description":"We are supportive and always focused on how we can help others.","dos":"","donts":"","example":"","archetypes":["Everyman","Magician"],"keywords":["Friendly","Guiding","Supportive"]},{"id":"clever","name":"Clever","description":"We are smart enough to use a well-placed pun and smart enough to know when not to.","dos":"Puns and humor where appropriate.","donts":"Do not be sarcastic or negative.","example":"","archetypes":["Creator","Jester","Magician"],"keywords":["Creative","Fun","Innovative","Intelligent","Positive"]},{"id":"simplified","name":"Simplified","description":"We know that a direct voice is what is needed for our audience.","dos":"","donts":"","example":"","archetypes":["Innocent"],"keywords":["Positive","Straightforward"]},{"id":"optimistic","name":"Optimistic","description":"We know the future is bright and we are heading directly there. Nothing will stop us!","dos":"Storytell and nurture connection while always focusing on the future.","donts":"Be overly perky, fake or casual.","example":"","archetypes":["Creator","Everyman","Hero","Innocent"],"keywords":["Happy","Innovative","Positive","Young"]},{"id":"funny","name":"Funny","description":"We enjoy life and know that without frequent chuckles and needed belly laughs, none of this would be worth it.","dos":"Use a smart, well placed pun where appropriate. Open and end statements on positive notes.","donts":"Do not cross the line with sarcasm and do not push the limit simply for the sake of being funny.","example":"","archetypes":["Jester"],"keywords":["Fun","Happy","Positive"]}];
+const VT=[{"id":"inspirational","name":"Inspirational","description":"We are the fire that lights others spirits.","dos":"","donts":"","example":"","archetypes":["Creator","Innocent"]},{"id":"sensual","name":"Sensual","description":"We provoke intimate feelings and lead with love.","dos":"","donts":"","example":"","archetypes":["Lover"]},{"id":"playful","name":"Playful","description":"We infuse fun into every sentence we speak.","dos":"","donts":"","example":"","archetypes":["Jester"]},{"id":"committed","name":"Committed","description":"We will never give up. We chose this path and will see it through.","dos":"Infuse writing with unwavering commitment, using enthusiastic and inspiring language.","donts":"Avoid generic or bland language. Avoid sounding overly aggressive.","example":"We wholeheartedly believe in our mission to empower individuals!","archetypes":["Creator","Explorer","Sage"]},{"id":"guiding","name":"Guiding","description":"We take the time to know all the details so we can lead others in the best possible direction.","dos":"","donts":"","example":"","archetypes":["Caregiver","Everyman","Explorer"]},{"id":"beneficial","name":"Beneficial","description":"Focused on communicating value at all times.","dos":"Use positive adjectives that are encouraging. Support with examples where possible.","donts":"","example":"","archetypes":["Caregiver","Creator","Everyman"]},{"id":"innovative","name":"Innovative","description":"We ignite the spark of inspiration — always something they have never heard before.","dos":"Ensure the product and value is front and center. Speak firmly toward the future.","donts":"","example":"","archetypes":["Creator","Magician"]},{"id":"trustworthy","name":"Trustworthy","description":"A trusted voice that others will always gladly refer to.","dos":"Prioritize clarity and honesty to foster reliability and dependability.","donts":"Overpromise or exaggerate.","example":"","archetypes":["Everyman","Sage"]},{"id":"mystical","name":"Mystical","description":"We live in a world where magic can happen, and believe in the impossible.","dos":"","donts":"","example":"","archetypes":["Magician"]},{"id":"empathetic","name":"Empathetic","description":"We understand our audience and speak to them from our related experience.","dos":"Keep language simple, supportive, educational. Use we often.","donts":"Speak as if you are the only person in the room.","example":"","archetypes":["Caregiver","Everyman"]},{"id":"knowledgeable","name":"Knowledgeable","description":"We go beyond the information to deliver expertise.","dos":"Research thoroughly. Share unique insights. Use clear language. Back up claims with data.","donts":"Assume expertise where you lack it. Overuse jargon.","example":"","archetypes":["Explorer","Sage"]},{"id":"assured","name":"Assured","description":"Trusted, supportive and always focused on how we can help others.","dos":"","donts":"","example":"","archetypes":["Innocent","Sage"]},{"id":"tenacious","name":"Tenacious","description":"We get things done — done right, well, quickly — always.","dos":"Use words like will. All positive, all the time.","donts":"Never use words that imply you might accomplish something.","example":"","archetypes":["Creator","Explorer","Jester"]},{"id":"bold","name":"Bold","description":"Unafraid to ask the hard questions, think outside the box and take big risks.","dos":"Use urgent, provocative language and sometimes say the unexpected.","donts":"Do not revert to generic sayings or ideas.","example":"","archetypes":["Explorer","Hero","Rebel","Ruler"]},{"id":"disruptive","name":"Disruptive","description":"We encourage others to think differently.","dos":"Speak outside the norm. Use words that engage curiosity.","donts":"","example":"","archetypes":["Creator","Explorer","Rebel"]},{"id":"soothing","name":"Soothing","description":"We know it is not always easy and will be here for what you need.","dos":"Use reassuring language. Acknowledge feelings. Use soft words like gentle, steady, supportive.","donts":"Avoid alarmist language. Avoid urgency. Do not overpromise.","example":"We understand how overwhelming this journey can be.","archetypes":["Caregiver","Lover"]},{"id":"fearless","name":"Fearless","description":"Not afraid to say what we think or feel — inspiring others to look up to us.","dos":"Be bold and confident. Stand for something. Take risks. Be authentic.","donts":"Do not be offensive or reckless. Do not be inconsistent.","example":"","archetypes":["Explorer","Hero","Rebel"]},{"id":"informed","name":"Informed","description":"We take the time to obtain the knowledge and are a resource for others.","dos":"Ensure content is well-researched and backed by credible sources.","donts":"Avoid using overly complex jargon that may confuse your audience.","example":"","archetypes":["Creator","Explorer","Magician","Sage"]},{"id":"passionate","name":"Passionate","description":"All in. We believe in every word we communicate and inspire others to feel the same.","dos":"Use words that evoke emotion, ignite enthusiasm, and convey urgency.","donts":"Steer clear of excessive jargon that may dilute the passionate tone.","example":"Join us on this exhilarating journey — let us create a brighter future together!","archetypes":["Caregiver","Creator","Explorer","Lover","Rebel"]},{"id":"friendly","name":"Friendly","description":"Human and know that people are what matter most.","dos":"Insert natural happy, fun, relaxed language. Use us and we often.","donts":"Be restricted or short. Do not only speak to facts.","example":"","archetypes":["Caregiver","Everyman"]},{"id":"straightforward","name":"Straightforward","description":"We speak to you not at you — relate, connect and inspire.","dos":"Choose short, sharp, and powerful vernacular.","donts":"Do not mix words or overuse puns.","example":"","archetypes":["Hero","Innocent","Ruler"]},{"id":"challenging","name":"Challenging","description":"Direct and compelling — motivates you to be bigger, braver, stronger.","dos":"Lead with questions and mean what we say.","donts":"Do not ramble or use lengthy open-ended language.","example":"","archetypes":["Explorer","Rebel"]},{"id":"authentic","name":"Authentic","description":"Proud of what we have built, not afraid to show it — but always humble and truthful.","dos":"Talk to the brand proudly. Speak with confidence. Keep sentences concise. Speak as peers.","donts":"Deliver inflated messages. Do not compare to other brands for the sake of showing off.","example":"","archetypes":["Everyman","Hero","Rebel"]},{"id":"encouraging","name":"Encouraging","description":"Supportive and always focused on how we can help others.","dos":"","donts":"","example":"","archetypes":["Everyman","Magician"]},{"id":"clever","name":"Clever","description":"Smart enough to use a well-placed pun — and smart enough to know when not to.","dos":"Puns and humor where appropriate.","donts":"Do not be sarcastic or negative.","example":"","archetypes":["Creator","Jester","Magician"]},{"id":"simplified","name":"Simplified","description":"A direct voice is what is needed for our audience.","dos":"","donts":"","example":"","archetypes":["Innocent"]},{"id":"optimistic","name":"Optimistic","description":"The future is bright and we are heading directly there. Nothing will stop us!","dos":"Storytell and nurture connection while always focusing on the future.","donts":"Be overly perky, fake or casual.","example":"","archetypes":["Creator","Everyman","Hero","Innocent"]},{"id":"funny","name":"Funny","description":"We enjoy life — without frequent chuckles and belly laughs, none of this would be worth it.","dos":"Use a smart, well-placed pun where appropriate. End on positive notes.","donts":"Do not cross the line with sarcasm or push the limit just to be funny.","example":"","archetypes":["Jester"]}];
 
-let state={
-  currentExercise:"welcome",openDetail:null,
-  cvKeywords:[],vtKeywords:[],
-  cvRecs:[],vtRecs:[],
-  cvRecsLoading:false,vtRecsLoading:false,
-  showAllCV:false,showAllVT:false,
-  brandKit:{vision:"",mission:"",coreValues:[],archetypes:[],voiceTraits:[],toneSliders:{formal:50,serious:50,edgy:50},targetAudience:"",uniqueValue:"",competitors:"",positioning:"",tagline:"",elevator:"",keyMessages:""},
-  aiOutputs:{},
-  done:{brandHouse:false,personality:false,positioning:false,messaging:false},
+let S={
+  ex:"welcome",detail:null,
+  cvKw:[],vtKw:[],
+  cvMatches:[],vtMatches:[],
+  cvLoading:false,vtLoading:false,
+  bk:{vision:"",mission:"",coreValues:[],archetypes:[],voiceTraits:[],tone:{formal:50,serious:50,edgy:50},audience:"",uvp:"",competitors:"",positioning:"",tagline:"",elevator:""},
+  ai:{},done:{brandHouse:false,personality:false,positioning:false,messaging:false}
 };
 
-function loadState(){try{const s=localStorage.getItem("bs_fft_v4");if(s){const p=JSON.parse(s);state={...state,...p,openDetail:null,cvRecsLoading:false,vtRecsLoading:false}}}catch(e){}}
-function saveState(){try{localStorage.setItem("bs_fft_v4",JSON.stringify(state))}catch(e){}}
-function startOver(){if(!confirm("Start over? This clears your saved brand kit."))return;try{localStorage.removeItem("bs_fft_v4")}catch(e){}state={currentExercise:"welcome",openDetail:null,cvKeywords:[],vtKeywords:[],cvRecs:[],vtRecs:[],cvRecsLoading:false,vtRecsLoading:false,showAllCV:false,showAllVT:false,brandKit:{vision:"",mission:"",coreValues:[],archetypes:[],voiceTraits:[],toneSliders:{formal:50,serious:50,edgy:50},targetAudience:"",uniqueValue:"",competitors:"",positioning:"",tagline:"",elevator:"",keyMessages:""},aiOutputs:{},done:{brandHouse:false,personality:false,positioning:false,messaging:false}};render()}
-function goTo(id){state.currentExercise=id;state.openDetail=null;state.showAllCV=false;state.showAllVT=false;saveState();render();document.getElementById("main").scrollTop=0}
-function progress(){return EXERCISES.filter(e=>state.done[e.id]).length/EXERCISES.length}
+function load(){try{const s=localStorage.getItem("bs_v5");if(s){const p=JSON.parse(s);S={...S,...p,detail:null,cvLoading:false,vtLoading:false}}}catch(e){}}
+function save(){try{localStorage.setItem("bs_v5",JSON.stringify(S))}catch(e){}}
+function go(id){S.ex=id;S.detail=null;save();render();document.getElementById("main").scrollTop=0}
+function prog(){return EX.filter(e=>S.done[e.id]).length/EX.length}
 function esc(t){return(t||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
-function aiBox(id){const out=state.aiOutputs[id];return`<div class="ai-box" id="${id}" style="display:${out?"block":"none"}">${out?'<div class="ai-label">&#10022; AI Suggestion</div>'+esc(out):""}</div>`}
-function progressBar(){return`<div class="progress-bar"><div class="progress-fill" style="width:${Math.round(progress()*100)}%"></div></div>`}
+function pbar(){return`<div class="progress-bar"><div class="progress-fill" style="width:${Math.round(prog()*100)}%"></div></div>`}
+function abox(id){const o=S.ai[id];return`<div class="ai-box" id="${id}" style="display:${o?"block":"none"}">${o?'<div class="ai-lbl">&#10022; AI Suggestion</div>'+esc(o):""}</div>`}
+function startOver(){if(!confirm("Start over? This clears your brand kit."))return;try{localStorage.removeItem("bs_v5")}catch(e){}S={ex:"welcome",detail:null,cvKw:[],vtKw:[],cvMatches:[],vtMatches:[],cvLoading:false,vtLoading:false,bk:{vision:"",mission:"",coreValues:[],archetypes:[],voiceTraits:[],tone:{formal:50,serious:50,edgy:50},audience:"",uvp:"",competitors:"",positioning:"",tagline:"",elevator:""},ai:{},done:{brandHouse:false,personality:false,positioning:false,messaging:false}};render()}
 
-async function callClaude(prompt){
-  const res=await fetch("/api/claude",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:prompt}]})});
-  const data=await res.json();
-  return data.content?.find(b=>b.type==="text")?.text||"";
+async function claude(prompt){
+  const r=await fetch("/api/claude",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:800,messages:[{role:"user",content:prompt}]})});
+  const d=await r.json();
+  return d.content?.find(b=>b.type==="text")?.text||"";
 }
-function setAiLoading(id){const b=document.getElementById(id);if(!b)return;b.style.display="block";b.innerHTML='<div class="ai-label"><span class="spinner"></span> Generating...</div>'}
-function setAiResult(id,text){const b=document.getElementById(id);if(!b)return;b.style.display="block";b.innerHTML='<div class="ai-label">&#10022; AI Suggestion</div>'+esc(text)}
+function aiLoad(id){const b=document.getElementById(id);if(!b)return;b.style.display="block";b.innerHTML='<div class="ai-lbl"><span class="spinner"></span> Generating...</div>'}
+function aiSet(id,t){const b=document.getElementById(id);if(!b)return;b.style.display="block";b.innerHTML='<div class="ai-lbl">&#10022; AI Suggestion</div>'+esc(t)}
 
 function render(){
   renderNav();
-  const views={welcome:renderWelcome,brandHouse:renderBrandHouse,personality:renderPersonality,positioning:renderPositioning,messaging:renderMessaging,summary:renderSummary};
-  document.getElementById("main").innerHTML=(views[state.currentExercise]||renderWelcome)();
+  const views={welcome:rWelcome,brandHouse:rBrandHouse,personality:rPersonality,positioning:rPositioning,messaging:rMessaging,summary:rSummary};
+  document.getElementById("main").innerHTML=(views[S.ex]||rWelcome)();
 }
-
 function renderNav(){
   document.getElementById("nav").innerHTML=
-    EXERCISES.map(e=>`<div class="nav-item ${state.currentExercise===e.id?"active":""} ${state.done[e.id]?"done":""}" onclick="goTo('${e.id}')">
-      <span class="nav-num">${state.done[e.id]?"&#10003;":e.num}</span><span class="nav-label">${e.label}</span></div>`).join("")+
-    `<div class="nav-item ${state.currentExercise==="summary"?"active":""}" onclick="goTo('summary')"><span class="nav-num">&#9733;</span><span class="nav-label">Brand Kit</span></div>`;
+    EX.map(e=>`<div class="nav-item ${S.ex===e.id?"active":""} ${S.done[e.id]?"done":""}" onclick="go('${e.id}')">
+      <span class="nav-num">${S.done[e.id]?"&#10003;":e.num}</span><span class="nav-txt">${e.label}</span></div>`).join("")+
+    `<div class="nav-item ${S.ex==="summary"?"active":""}" onclick="go('summary')"><span class="nav-num">&#9733;</span><span class="nav-txt">Brand Kit</span></div>`;
 }
 
-function renderWelcome(){
-  const anyDone=Object.values(state.done).some(Boolean);
-  const doneCount=EXERCISES.filter(e=>state.done[e.id]).length;
+function rWelcome(){
   return`<div class="welcome">
     <div class="eyebrow">AI-Powered Brand Strategy</div>
     <h1>Build your brand <em>foundation.</em></h1>
-    <p>Four guided exercises powered by your proprietary Fivefoottwo databases. Use keywords to get AI-recommended values and voice traits — then customise from the full library.</p>
-    <button class="btn-primary" onclick="goTo('brandHouse')">${anyDone?"Continue Building":"Let's do this"} &rarr;</button>
-    <div class="stats-strip">
-      <div class="stat-item"><div class="stat-num">${NOTION_CORE_VALUES.length}</div><div class="stat-label">Core value options</div></div>
-      <div class="stat-item"><div class="stat-num">${NOTION_VOICE_TRAITS.length}</div><div class="stat-label">Voice traits</div></div>
-      <div class="stat-item"><div class="stat-num">${doneCount}/4</div><div class="stat-label">Exercises done</div></div>
-    </div>
+    <p>Four guided exercises powered by your proprietary Fivefoottwo databases. Select keywords to get AI-curated values and voice traits matched specifically to your brand.</p>
+    <button class="btn-primary" onclick="go('brandHouse')">Let's do this &rarr;</button>
   </div>`;
 }
 
-function renderKeywordSelector(type){
+function kwSelector(type){
   const isCV=type==="cv";
-  const keywords=isCV?state.cvKeywords:state.vtKeywords;
-  const recs=isCV?state.cvRecs:state.vtRecs;
-  const loading=isCV?state.cvRecsLoading:state.vtRecsLoading;
-  const presetPersonality=PERSONALITY_KEYWORDS.map(k=>{
-    const sel=keywords.includes(k);
-    return`<span class="kw-chip ${sel?"selected":""}" onclick="toggleKw('${type}','${k}')">${esc(k)}</span>`;
-  }).join("");
-  const presetGoals=GOAL_KEYWORDS.map(k=>{
-    const sel=keywords.includes(k);
-    return`<span class="kw-chip ${sel?"selected":""}" onclick="toggleKw('${type}','${k}')">${esc(k)}</span>`;
-  }).join("");
-  const selectedTags=keywords.map(k=>`<span class="kw-selected-tag">${esc(k)} <span onclick="removeKw('${type}','${k}')">&times;</span></span>`).join("");
-  let recsHtml="";
+  const kws=isCV?S.cvKw:S.vtKw;
+  const loading=isCV?S.cvLoading:S.vtLoading;
+  const matches=isCV?S.cvMatches:S.vtMatches;
+  const pChips=P_KW.map(k=>`<span class="chip ${kws.includes(k)?"sel":""}" onclick="toggleKw('${type}','${k}')">${esc(k)}</span>`).join("");
+  const gChips=G_KW.map(k=>`<span class="chip ${kws.includes(k)?"sel":""}" onclick="toggleKw('${type}','${k}')">${esc(k)}</span>`).join("");
+  const tags=kws.map(k=>`<span class="kw-tag">${esc(k)} <span onclick="removeKw('${type}','${k}')">&times;</span></span>`).join("");
+  let resultsHtml="";
   if(loading){
-    recsHtml=`<div class="ai-recs"><div class="ai-recs-header"><span class="spinner"></span><span class="ai-recs-title" style="margin-left:8px">Finding your best matches...</span></div></div>`;
-  }else if(recs.length>0){
-    const recChips=recs.map(name=>{
-      const item=isCV?NOTION_CORE_VALUES.find(v=>v.name===name):NOTION_VOICE_TRAITS.find(t=>t.name===name);
+    resultsHtml=`<div class="loading-box"><span class="spinner"></span> Finding your best matches from the database...</div>`;
+  }else if(matches.length>0){
+    const db=isCV?CV:VT;
+    const cards=matches.map(name=>{
+      const item=db.find(x=>x.name===name);
       if(!item)return"";
-      const sel=isCV?state.brandKit.coreValues.includes(item.id):state.brandKit.voiceTraits.includes(item.id);
-      return`<span class="ai-rec-chip ${sel?"selected":""}" onclick="${isCV?`toggleValue('${item.id}')`:`toggleVoice('${item.id}')`}">&#10022; ${esc(name)}${sel?" &#10003;":""}</span>`;
+      const sel=isCV?S.bk.coreValues.includes(item.id):S.bk.voiceTraits.includes(item.id);
+      const open=S.detail===item.id;
+      const tags2=isCV?(item.tags||[]).map(t=>`<span class="tag-pill">${esc(t)}</span>`).join(""):(item.archetypes||[]).map(a=>`<span class="arch-pill">${esc(a)}</span>`).join("");
+      const drawer=open&&!isCV&&(item.dos||item.donts)?`<div class="detail-drawer" onclick="event.stopPropagation()">
+        <span class="dd-close" onclick="toggleDetail('${item.id}')">&#10005; close</span>
+        <div class="dd-title">${esc(item.name)}</div>
+        <div class="dd-desc">${esc(item.description)}</div>
+        <div class="dd-grid">
+          <div><div class="dd-lbl dos">&#10003; Do's</div><div class="dd-body">${esc(item.dos)}</div></div>
+          <div><div class="dd-lbl donts">&#10005; Don'ts</div><div class="dd-body">${esc(item.donts)}</div></div>
+        </div>
+        ${item.example?`<div class="dd-eg">"${esc(item.example)}"</div>`:""}
+      </div>`:"";
+      return`<div class="result-card ${sel?"sel":""}" onclick="${isCV?`toggleCV('${item.id}')`:`toggleVT('${item.id}')`}">
+        <div class="rc-head"><div class="rc-name">${esc(item.name)}</div><div class="rc-check">${sel?"&#10003;":""}</div></div>
+        <div class="rc-desc">${esc((item.description||"").substring(0,80))}${(item.description||"").length>80?"&hellip;":""}</div>
+        <div class="rc-tags" style="margin-bottom:${!isCV&&(item.dos||item.donts)?"4px":"0"}">${tags2}</div>
+        ${!isCV&&(item.dos||item.donts)?`<span class="tc-expand" onclick="event.stopPropagation();toggleDetail('${item.id}')">${open?"&#9650; hide":"&#9660; dos & don'ts"}</span>`:""}
+        ${drawer}
+      </div>`;
     }).join("");
-    recsHtml=`<div class="ai-recs">
-      <div class="ai-recs-header"><div>
-        <div class="ai-recs-title">&#10022; FFT + AI Matches</div>
-        <div class="ai-recs-subtitle">Best matches from your database based on keywords — click to select</div>
-      </div></div>
-      <div class="ai-rec-chips">${recChips}</div>
-      <div style="margin-top:12px"><span class="show-all-link" onclick="${isCV?"toggleShowAllCV()":"toggleShowAllVT()"}">
-        ${isCV?(state.showAllCV?"&#9650; Hide full list":"&#9660; Browse full database"):( state.showAllVT?"&#9650; Hide full list":"&#9660; Browse full database")}
-      </span></div>
+    resultsHtml=`<div style="margin-top:16px">
+      <div style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);margin-bottom:8px;display:flex;align-items:center;gap:8px"><span style="display:block;width:16px;height:2px;background:var(--accent)"></span>&#10022; FFT + AI Matched Options</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:10px">${matches.length} options matched to your keywords — click to select</div>
+      <div class="results-grid">${cards}</div>
     </div>`;
   }
   return`<div class="card">
-    <div class="card-title">&#128273; Find by Keywords</div>
-    <div class="card-desc">Select presets or type your own — then get FFT + AI matched options from your database.</div>
+    <div class="card-title">Find by Keywords</div>
+    <div class="card-desc">Select your brand's personality and goals — then get options matched from the Fivefoottwo database.</div>
     <div class="kw-section">
-      <div class="kw-section-title">Personality &amp; Feel</div>
-      <div class="kw-chips">${presetPersonality}</div>
+      <div class="kw-title">Personality &amp; Feel</div>
+      <div class="chips">${pChips}</div>
     </div>
     <div class="kw-section">
-      <div class="kw-section-title">Goals &amp; Values</div>
-      <div class="kw-chips">${presetGoals}</div>
+      <div class="kw-title">Goals &amp; Values</div>
+      <div class="chips">${gChips}</div>
     </div>
     <div class="kw-section">
-      <div class="kw-section-title">Add your own</div>
-      <div class="kw-input-row">
-        <input type="text" id="kwInput_${type}" placeholder="e.g. sustainable, community-led, results-driven..." onkeydown="if(event.key==='Enter')addKw('${type}')">
-        <button class="kw-add-btn" onclick="addKw('${type}')">+ Add</button>
+      <div class="kw-title">Add your own</div>
+      <div class="kw-row">
+        <input type="text" id="kwi_${type}" placeholder="e.g. sustainable, community-led..." onkeydown="if(event.key==='Enter')addKw('${type}')">
+        <button class="kw-add" onclick="addKw('${type}')">+ Add</button>
       </div>
     </div>
-    ${selectedTags?`<div class="kw-selected-list">${selectedTags}</div>`:""}
-    <div class="action-row" style="margin-top:16px">
-      <button class="btn-ai" onclick="getAiRecs('${type}')" ${keywords.length===0?"disabled":""}>&#10022; Get FFT + AI Options</button>
-      ${keywords.length===0?`<span style="font-size:12px;color:var(--muted)">Select at least one keyword first</span>`:""}
+    ${tags?`<div class="kw-tags">${tags}</div>`:""}
+    <div class="action-row">
+      <button class="btn-ai" onclick="getMatches('${type}')" ${kws.length===0?"disabled":""}>&#10022; Get FFT + AI Options</button>
+      ${kws.length===0?`<span style="font-size:12px;color:var(--muted)">Select at least one keyword first</span>`:""}
     </div>
-    ${recsHtml}
+    ${resultsHtml}
   </div>`;
 }
 
-function toggleKw(type,kw){const arr=type==="cv"?state.cvKeywords:state.vtKeywords;const i=arr.indexOf(kw);i===-1?arr.push(kw):arr.splice(i,1);saveState();render()}
-function addKw(type){const inp=document.getElementById("kwInput_"+type);if(!inp||!inp.value.trim())return;const kw=inp.value.trim();const arr=type==="cv"?state.cvKeywords:state.vtKeywords;if(!arr.includes(kw))arr.push(kw);saveState();render()}
-function removeKw(type,kw){const arr=type==="cv"?state.cvKeywords:state.vtKeywords;const i=arr.indexOf(kw);if(i>-1)arr.splice(i,1);saveState();render()}
-function toggleShowAllCV(){state.showAllCV=!state.showAllCV;render()}
-function toggleShowAllVT(){state.showAllVT=!state.showAllVT;render()}
+function toggleKw(type,kw){const a=type==="cv"?S.cvKw:S.vtKw;const i=a.indexOf(kw);i===-1?a.push(kw):a.splice(i,1);save();render()}
+function addKw(type){const el=document.getElementById("kwi_"+type);if(!el||!el.value.trim())return;const kw=el.value.trim();const a=type==="cv"?S.cvKw:S.vtKw;if(!a.includes(kw))a.push(kw);save();render()}
+function removeKw(type,kw){const a=type==="cv"?S.cvKw:S.vtKw;const i=a.indexOf(kw);if(i>-1)a.splice(i,1);save();render()}
+function toggleDetail(id){S.detail=S.detail===id?null:id;render()}
+function toggleCV(id){const a=S.bk.coreValues,i=a.indexOf(id);i===-1?(a.length<7&&a.push(id)):a.splice(i,1);save();render()}
+function toggleVT(id){const a=S.bk.voiceTraits,i=a.indexOf(id);i===-1?(a.length<6&&a.push(id)):a.splice(i,1);save();render()}
 
-async function getAiRecs(type){
+async function getMatches(type){
   const isCV=type==="cv";
-  const keywords=isCV?state.cvKeywords:state.vtKeywords;
-  if(!keywords.length)return;
-  if(isCV){state.cvRecsLoading=true;state.showAllCV=false;}else{state.vtRecsLoading=true;state.showAllVT=false;}
-  render();
+  const kws=isCV?S.cvKw:S.vtKw;
+  if(!kws.length)return;
+  if(isCV)S.cvLoading=true;else S.vtLoading=true;
+  S.detail=null;render();
   try{
-    const names=isCV
-      ?NOTION_CORE_VALUES.map(v=>`"${v.name}": ${v.description} [${(v.tags||[]).join(",")}]`).join("\n")
-      :NOTION_VOICE_TRAITS.map(t=>`"${t.name}": ${t.description} [${(t.archetypes||[]).join(",")}]`).join("\n");
+    const db=isCV?CV:VT;
+    const dbList=db.map(x=>`"${x.name}": ${x.description}${isCV?" ["+(x.tags||[]).join(",")+"]":" ["+(x.archetypes||[]).join(",")+"]"}`).join("\n");
     const label=isCV?"core values":"brand voice traits";
-    const r=await callClaude(`You are a brand strategist. A brand described itself with these keywords: ${keywords.join(", ")}.\n\nFrom the following ${label}, pick the 6 best matches. Return ONLY a JSON array of exact names, nothing else.\nExample format: ["Name1","Name2","Name3","Name4","Name5","Name6"]\n\n${label}:\n${names}`);
-    let recs=[];
-try{const match=r.match(/\[[\s\S]*?\]/);if(match)recs=JSON.parse(match[0]);console.log("AI response:",r);console.log("Parsed recs:",recs)}catch(e){recs=[];console.log("Parse error:",e)}    if(isCV)state.cvRecs=recs;else state.vtRecs=recs;
-  }catch(e){if(isCV)state.cvRecs=[];else state.vtRecs=[]}
-  if(isCV)state.cvRecsLoading=false;else state.vtRecsLoading=false;
-  saveState();render();
+    const r=await claude(`You are a brand strategist. A brand described itself with these keywords: ${kws.join(", ")}.\n\nFrom the list of ${label} below, select the 6-8 best matches. Return ONLY a valid JSON array of exact names — no extra text, no markdown, no explanation.\n\nExample: ["Name One","Name Two","Name Three"]\n\n${label}:\n${dbList}`);
+    let matches=[];
+    const m=r.match(/\[[\s\S]*?\]/);
+    if(m){try{matches=JSON.parse(m[0]);matches=matches.filter(n=>db.some(x=>x.name===n))}catch(e){matches=[]}}
+    if(isCV)S.cvMatches=matches;else S.vtMatches=matches;
+  }catch(e){if(isCV)S.cvMatches=[];else S.vtMatches=[]}
+  if(isCV)S.cvLoading=false;else S.vtLoading=false;
+  save();render();
 }
-  function renderBrandHouse(){
-  const bk=state.brandKit;
-const showAll=state.showAllCV;const hasRecs=state.cvRecs.length>0;
-    const displayCV=!hasRecs?[]:showAll?NOTION_CORE_VALUES:NOTION_CORE_VALUES.filter(v=>state.cvRecs.includes(v.name));
-    const valCards=displayCV.map(v=>{
-    const sel=bk.coreValues.includes(v.id);
-    const tags=(v.tags||[]).map(t=>`<span class="tag-pill">${esc(t)}</span>`).join("");
-    return`<div class="value-card ${sel?"selected":""}" onclick="toggleValue('${v.id}')">
-      <div class="vc-header"><div class="vc-title">${esc(v.name)}</div><div class="vc-check">${sel?"&#10003;":""}</div></div>
-      ${v.description?`<div class="vc-desc">${esc(v.description.substring(0,90))}${v.description.length>90?"&hellip;":""}</div>`:""}
-      ${tags?`<div class="vc-tags">${tags}</div>`:""}
-    </div>`;
-  }).join("");
-  const gridLabel=state.cvRecs.length>0&&!state.showAllCV
-    ?`Showing ${displayCV.length} matched values`
-    :`All ${NOTION_CORE_VALUES.length} core values`;
-  return progressBar()+`
+  function rBrandHouse(){
+  const bk=S.bk;
+  return pbar()+`
   <div class="ex-header">
     <div class="ex-tag">Exercise 01</div>
     <div class="ex-title">Brand House</div>
@@ -345,133 +307,103 @@ const showAll=state.showAllCV;const hasRecs=state.cvRecs.length>0;
   <div class="card">
     <div class="card-title">Vision Statement</div>
     <div class="card-desc">The future you are working to create.</div>
-    <textarea id="vision" rows="3" placeholder="e.g. A world where every early-stage startup has the marketing power of a Fortune 500..." oninput="state.brandKit.vision=this.value;saveState()">${esc(bk.vision)}</textarea>
+    <textarea id="vision" rows="3" placeholder="e.g. A world where every startup has the marketing power of a Fortune 500..." oninput="S.bk.vision=this.value;save()">${esc(bk.vision)}</textarea>
     <div class="action-row"><button class="btn-ai" onclick="aiVision()">&#10022; Refine with AI</button></div>
-    ${aiBox("aiVision")}
+    ${abox("aiVision")}
   </div>
   <div class="card">
     <div class="card-title">Mission Statement</div>
     <div class="card-desc">Your purpose and how you deliver on it.</div>
-    <textarea id="mission" rows="3" placeholder="e.g. We help venture-backed startups build sustainable marketing engines..." oninput="state.brandKit.mission=this.value;saveState()">${esc(bk.mission)}</textarea>
+    <textarea id="mission" rows="3" placeholder="e.g. We help venture-backed startups build sustainable marketing engines..." oninput="S.bk.mission=this.value;save()">${esc(bk.mission)}</textarea>
     <div class="action-row"><button class="btn-ai" onclick="aiMission()">&#10022; Refine with AI</button></div>
-    ${aiBox("aiMission")}
+    ${abox("aiMission")}
   </div>
-  ${renderKeywordSelector("cv")}
-  <div class="card">
-    <div class="card-title">Core Values</div>
-    <div class="card-desc">${gridLabel}. <span class="sel-count">${bk.coreValues.length} selected</span>
-      ${state.cvRecs.length>0?`<span class="show-all-link" style="margin-left:8px" onclick="toggleShowAllCV()">${state.showAllCV?"Show matches only":"Browse all "+NOTION_CORE_VALUES.length}</span>`:""}
-    </div>
-    <div class="values-grid">${valCards}</div>
-    <div class="action-row" style="margin-top:18px"><button class="btn-next" onclick="saveBrandHouse()">Save &amp; Continue &rarr;</button></div>
-  </div>`;
+  ${kwSelector("cv")}
+  ${S.bk.coreValues.length>0?`<div class="card">
+    <div class="card-title">Selected Core Values <span class="sel-count">(${S.bk.coreValues.length})</span></div>
+    <div class="results-grid">${CV.filter(v=>S.bk.coreValues.includes(v.id)).map(v=>`<div class="result-card sel" onclick="toggleCV('${v.id}')">
+      <div class="rc-head"><div class="rc-name">${esc(v.name)}</div><div class="rc-check">&#10003;</div></div>
+      <div class="rc-desc">${esc((v.description||"").substring(0,80))}${(v.description||"").length>80?"&hellip;":""}</div>
+    </div>`).join("")}</div>
+    <div class="action-row"><button class="btn-next" onclick="saveBH()">Save &amp; Continue &rarr;</button></div>
+  </div>`:`<div class="action-row" style="margin-top:4px"><button class="btn-next" onclick="saveBH()">Save &amp; Continue &rarr;</button></div>`}`;
 }
 
-function toggleValue(id){const a=state.brandKit.coreValues,i=a.indexOf(id);i===-1?(a.length<7&&a.push(id)):a.splice(i,1);saveState();render()}
-async function aiVision(){const v=document.getElementById("vision").value;if(!v)return;state.brandKit.vision=v;setAiLoading("aiVision");try{const r=await callClaude(`You are a brand strategist. Refine this vision statement — inspiring, clear, memorable. 1-2 sentences only.\n\nVision: ${v}`);state.aiOutputs.aiVision=r;saveState();setAiResult("aiVision",r)}catch(e){document.getElementById("aiVision").innerHTML="Could not connect to AI."}}
-async function aiMission(){const m=document.getElementById("mission").value;if(!m)return;state.brandKit.mission=m;setAiLoading("aiMission");try{const r=await callClaude(`Refine this mission statement — clear, purposeful, action-oriented, 1-2 sentences.\n\nMission: ${m}`);state.aiOutputs.aiMission=r;saveState();setAiResult("aiMission",r)}catch(e){document.getElementById("aiMission").innerHTML="Could not connect."}}
-function saveBrandHouse(){state.brandKit.vision=document.getElementById("vision")?.value||state.brandKit.vision;state.brandKit.mission=document.getElementById("mission")?.value||state.brandKit.mission;state.done.brandHouse=!!(state.brandKit.vision&&state.brandKit.coreValues.length>0);saveState();goTo("personality")}
+async function aiVision(){const v=document.getElementById("vision").value;if(!v)return;S.bk.vision=v;aiLoad("aiVision");try{const r=await claude(`Refine this vision statement — inspiring, clear, memorable, 1-2 sentences.\n\nVision: ${v}`);S.ai.aiVision=r;save();aiSet("aiVision",r)}catch(e){document.getElementById("aiVision").innerHTML="Could not connect."}}
+async function aiMission(){const m=document.getElementById("mission").value;if(!m)return;S.bk.mission=m;aiLoad("aiMission");try{const r=await claude(`Refine this mission statement — clear, purposeful, action-oriented, 1-2 sentences.\n\nMission: ${m}`);S.ai.aiMission=r;save();aiSet("aiMission",r)}catch(e){document.getElementById("aiMission").innerHTML="Could not connect."}}
+function saveBH(){S.bk.vision=document.getElementById("vision")?.value||S.bk.vision;S.bk.mission=document.getElementById("mission")?.value||S.bk.mission;S.done.brandHouse=!!(S.bk.vision&&S.bk.coreValues.length>0);save();go("personality")}
 
-function renderPersonality(){
-  const bk=state.brandKit;const s=bk.toneSliders;
-const showAll=state.showAllCV;const hasRecs=state.cvRecs.length>0;
-const displayVT=!hasRecs?[]:showAll?NOTION_VOICE_TRAITS:NOTION_VOICE_TRAITS.filter(t=>state.vtRecs.includes(t.name));
-  const traitCards=displayVT.map(t=>{
-    const sel=bk.voiceTraits.includes(t.id);
-    const open=state.openDetail===t.id;
-    const pills=(t.archetypes||[]).map(a=>`<span class="arch-pill">${esc(a)}</span>`).join("");
-    const drawer=open?`<div class="detail-drawer" onclick="event.stopPropagation()">
-      <span class="dd-close" onclick="toggleDetail('${t.id}')">&#10005; close</span>
-      <div class="dd-title">${esc(t.name)}</div>
-      <div class="dd-desc">${esc(t.description)}</div>
-      <div class="dd-grid">
-        <div><div class="dd-section-title dos">&#10003; Do's</div><div class="dd-body">${esc(t.dos)}</div></div>
-        <div><div class="dd-section-title donts">&#10005; Don'ts</div><div class="dd-body">${esc(t.donts)}</div></div>
-      </div>
-      ${t.example?`<div class="dd-example">"${esc(t.example)}"</div>`:""}
-    </div>`:"";
-    return`<div class="trait-card ${sel?"selected":""}" onclick="toggleVoice('${t.id}')">
-      <div class="tc-header"><div class="tc-name">${esc(t.name)}</div><div class="tc-check">${sel?"&#10003;":""}</div></div>
-      <div class="tc-desc">${esc((t.description||"").substring(0,80))}${(t.description||"").length>80?"&hellip;":""}</div>
-      ${pills?`<div class="tc-archetypes">${pills}</div>`:""}
-      ${(t.dos||t.donts)?`<span class="tc-expand" onclick="event.stopPropagation();toggleDetail('${t.id}')">${open?"&#9650; hide":"&#9660; dos & don'ts"}</span>`:""}
-      ${drawer}
-    </div>`;
-  }).join("");
-  const archChips=ARCHETYPES.map(a=>{const sel=bk.archetypes.includes(a);return`<span class="arch-chip ${sel?"selected":""}" onclick="toggleArch('${a}')">${a}</span>`}).join("");
-  const gridLabel=state.vtRecs.length>0&&!state.showAllVT
-    ?`Showing ${displayVT.length} matched traits`
-    :`All ${NOTION_VOICE_TRAITS.length} voice traits`;
-  return progressBar()+`
+function rPersonality(){
+  const bk=S.bk;const t=bk.tone;
+  const archChips=ARCHETYPES.map(a=>`<span class="arch-chip ${bk.archetypes.includes(a)?"sel":""}" onclick="toggleArch('${a}')">${a}</span>`).join("");
+  return pbar()+`
   <div class="ex-header">
     <div class="ex-tag">Exercise 02</div>
     <div class="ex-title">Brand Personality</div>
-    <div class="ex-desc">Choose voice traits from your Brand Voice Trait Database&#8482; — with dos, don'ts and examples for each.</div>
+    <div class="ex-desc">Choose voice traits from your Brand Voice Trait Database&#8482; — matched to your keywords.</div>
   </div>
   <div class="card">
     <div class="card-title">Brand Archetypes</div>
     <div class="card-desc">Choose 1-2 primary archetypes.</div>
     <div class="arch-chips">${archChips}</div>
   </div>
-  ${renderKeywordSelector("vt")}
-  <div class="card">
-    <div class="card-title">Voice Traits</div>
-    <div class="card-desc">${gridLabel}. Click dos & don'ts for full guidance. <span class="sel-count">${bk.voiceTraits.length} selected</span>
-      ${state.vtRecs.length>0?`<span class="show-all-link" style="margin-left:8px" onclick="toggleShowAllVT()">${state.showAllVT?"Show matches only":"Browse all "+NOTION_VOICE_TRAITS.length}</span>`:""}
-    </div>
-    <div class="traits-grid">${traitCards}</div>
-  </div>
+  ${kwSelector("vt")}
+  ${S.bk.voiceTraits.length>0?`<div class="card">
+    <div class="card-title">Selected Voice Traits <span class="sel-count">(${S.bk.voiceTraits.length})</span></div>
+    <div class="results-grid">${VT.filter(t=>S.bk.voiceTraits.includes(t.id)).map(t=>`<div class="result-card sel" onclick="toggleVT('${t.id}')">
+      <div class="rc-head"><div class="rc-name">${esc(t.name)}</div><div class="rc-check">&#10003;</div></div>
+      <div class="rc-desc">${esc((t.description||"").substring(0,80))}${(t.description||"").length>80?"&hellip;":""}</div>
+    </div>`).join("")}</div>
+  </div>`:""}
   <div class="card">
     <div class="card-title">Tone Spectrum</div>
     <div class="card-desc">Fine-tune your brand's tonal position.</div>
-    <div class="tone-row"><div class="tone-label">Casual</div><input type="range" min="0" max="100" value="${s.formal}" oninput="state.brandKit.toneSliders.formal=parseInt(this.value);saveState()"><div class="tone-end">Formal</div></div>
-    <div class="tone-row"><div class="tone-label">Playful</div><input type="range" min="0" max="100" value="${s.serious}" oninput="state.brandKit.toneSliders.serious=parseInt(this.value);saveState()"><div class="tone-end">Serious</div></div>
-    <div class="tone-row"><div class="tone-label">Conservative</div><input type="range" min="0" max="100" value="${s.edgy}" oninput="state.brandKit.toneSliders.edgy=parseInt(this.value);saveState()"><div class="tone-end">Edgy</div></div>
+    <div class="tone-row"><div class="tone-lbl">Casual</div><input type="range" min="0" max="100" value="${t.formal}" oninput="S.bk.tone.formal=parseInt(this.value);save()"><div class="tone-end">Formal</div></div>
+    <div class="tone-row"><div class="tone-lbl">Playful</div><input type="range" min="0" max="100" value="${t.serious}" oninput="S.bk.tone.serious=parseInt(this.value);save()"><div class="tone-end">Serious</div></div>
+    <div class="tone-row"><div class="tone-lbl">Conservative</div><input type="range" min="0" max="100" value="${t.edgy}" oninput="S.bk.tone.edgy=parseInt(this.value);save()"><div class="tone-end">Edgy</div></div>
     <div class="action-row">
-      <button class="btn-ai" onclick="aiVoiceGuide()" ${!bk.voiceTraits.length?"disabled":""}>&#10022; Generate Voice Guide</button>
-      <button class="btn-next" onclick="savePersonality()">Save &amp; Continue &rarr;</button>
+      <button class="btn-ai" onclick="aiVoice()" ${!bk.voiceTraits.length?"disabled":""}>&#10022; Generate Voice Guide</button>
+      <button class="btn-next" onclick="saveP()">Save &amp; Continue &rarr;</button>
     </div>
-    ${aiBox("aiPersonality")}
+    ${abox("aiPersonality")}
   </div>`;
 }
 
-function toggleDetail(id){state.openDetail=state.openDetail===id?null:id;render()}
-function toggleArch(v){const a=state.brandKit.archetypes,i=a.indexOf(v);i===-1?(a.length<2&&a.push(v)):a.splice(i,1);saveState();render()}
-function toggleVoice(id){const a=state.brandKit.voiceTraits,i=a.indexOf(id);i===-1?(a.length<6&&a.push(id)):a.splice(i,1);saveState();render()}
-async function aiVoiceGuide(){const bk=state.brandKit;const selectedTraits=NOTION_VOICE_TRAITS.filter(t=>bk.voiceTraits.includes(t.id));const ctx=selectedTraits.map(t=>`${t.name}: ${t.description} Do's: ${t.dos} Don'ts: ${t.donts}`).join("\n");setAiLoading("aiPersonality");try{const r=await callClaude(`You are a brand strategist. Based on these voice traits, write a concise voice guide (4-5 bullet points).\n\nTraits:\n${ctx}\n\nTone: Formal/Casual ${bk.toneSliders.formal}/100\nArchetypes: ${bk.archetypes.join(", ")}\n\nBullet points only.`);state.aiOutputs.aiPersonality=r;saveState();setAiResult("aiPersonality",r)}catch(e){document.getElementById("aiPersonality").innerHTML="Could not connect."}}
-function savePersonality(){state.done.personality=!!(state.brandKit.archetypes.length&&state.brandKit.voiceTraits.length);saveState();goTo("positioning")}
+function toggleArch(v){const a=S.bk.archetypes,i=a.indexOf(v);i===-1?(a.length<2&&a.push(v)):a.splice(i,1);save();render()}
+async function aiVoice(){const bk=S.bk;const traits=VT.filter(t=>bk.voiceTraits.includes(t.id));const ctx=traits.map(t=>`${t.name}: ${t.description} Do's: ${t.dos} Don'ts: ${t.donts}`).join("\n");aiLoad("aiPersonality");try{const r=await claude(`Write a concise voice guide (4-5 bullet points) based on these traits.\n\nTraits:\n${ctx}\n\nTone: Formal/Casual ${bk.tone.formal}/100\nArchetypes: ${bk.archetypes.join(", ")}\n\nBullet points only.`);S.ai.aiPersonality=r;save();aiSet("aiPersonality",r)}catch(e){document.getElementById("aiPersonality").innerHTML="Could not connect."}}
+function saveP(){S.done.personality=!!(S.bk.archetypes.length&&S.bk.voiceTraits.length);save();go("positioning")}
 
-function renderPositioning(){
-  const bk=state.brandKit;
-  return progressBar()+`
+function rPositioning(){
+  const bk=S.bk;
+  return pbar()+`
   <div class="ex-header">
     <div class="ex-tag">Exercise 03</div>
     <div class="ex-title">Brand Positioning</div>
-    <div class="ex-desc">Define your market position — who you serve, what makes you different, and how you compare.</div>
+    <div class="ex-desc">Define your market position — who you serve, what makes you different.</div>
   </div>
   <div class="two-col">
-    <div class="card"><div class="card-title">Target Audience</div><div class="card-desc">Who is your ideal customer?</div><textarea id="targetAudience" rows="5" placeholder="e.g. Founders of venture-backed B2B SaaS startups..." oninput="state.brandKit.targetAudience=this.value;saveState()">${esc(bk.targetAudience)}</textarea></div>
-    <div class="card"><div class="card-title">Unique Value Proposition</div><div class="card-desc">What do you offer that no one else does?</div><textarea id="uniqueValue" rows="5" placeholder="e.g. Big-agency experience from a nimble team..." oninput="state.brandKit.uniqueValue=this.value;saveState()">${esc(bk.uniqueValue)}</textarea></div>
+    <div class="card"><div class="card-title">Target Audience</div><div class="card-desc">Who is your ideal customer?</div><textarea id="ta" rows="5" placeholder="e.g. Founders of venture-backed B2B SaaS startups..." oninput="S.bk.audience=this.value;save()">${esc(bk.audience)}</textarea></div>
+    <div class="card"><div class="card-title">Unique Value Proposition</div><div class="card-desc">What do you offer that no one else does?</div><textarea id="uvp" rows="5" placeholder="e.g. Big-agency experience from a nimble team..." oninput="S.bk.uvp=this.value;save()">${esc(bk.uvp)}</textarea></div>
   </div>
-  <div class="card"><div class="card-title">Competitive Landscape</div><div class="card-desc">Who are your main competitors and how are you different?</div><textarea id="competitors" rows="3" placeholder="e.g. vs large agencies (we're more agile)..." oninput="state.brandKit.competitors=this.value;saveState()">${esc(bk.competitors)}</textarea></div>
+  <div class="card"><div class="card-title">Competitive Landscape</div><div class="card-desc">Who are your main competitors and how are you different?</div><textarea id="comp" rows="3" placeholder="e.g. vs large agencies (we're more agile)..." oninput="S.bk.competitors=this.value;save()">${esc(bk.competitors)}</textarea></div>
   <div class="card">
     <div class="card-title">Positioning Statement</div>
     <div class="card-desc">Your market position in one powerful sentence.</div>
-    <textarea id="positioning" rows="3" placeholder="For [audience] who [need], we are the [category] that [differentiator]..." oninput="state.brandKit.positioning=this.value;saveState()">${esc(bk.positioning)}</textarea>
+    <textarea id="pos" rows="3" placeholder="For [audience] who [need], we are the [category] that [differentiator]..." oninput="S.bk.positioning=this.value;save()">${esc(bk.positioning)}</textarea>
     <div class="action-row">
-      <button class="btn-ai" onclick="aiPositioning()" ${!(bk.targetAudience&&bk.uniqueValue)?"disabled":""}>&#10022; Generate Statement</button>
-      <button class="btn-next" onclick="savePositioning()">Save &amp; Continue &rarr;</button>
+      <button class="btn-ai" onclick="aiPos()" ${!(bk.audience&&bk.uvp)?"disabled":""}>&#10022; Generate Statement</button>
+      <button class="btn-next" onclick="savePo()">Save &amp; Continue &rarr;</button>
     </div>
-    ${aiBox("aiPositioning")}
+    ${abox("aiPos")}
   </div>`;
 }
 
-async function aiPositioning(){const bk=state.brandKit;const ta=document.getElementById("targetAudience")?.value||bk.targetAudience;const uv=document.getElementById("uniqueValue")?.value||bk.uniqueValue;const comp=document.getElementById("competitors")?.value||bk.competitors;Object.assign(state.brandKit,{targetAudience:ta,uniqueValue:uv,competitors:comp});const cvNames=NOTION_CORE_VALUES.filter(v=>bk.coreValues.includes(v.id)).map(v=>v.name).join(", ");const vtNames=NOTION_VOICE_TRAITS.filter(t=>bk.voiceTraits.includes(t.id)).map(t=>t.name).join(", ");setAiLoading("aiPositioning");try{const r=await callClaude(`Write a positioning statement: "For [audience] who [need], [Brand] is the [category] that [differentiator] because [reason to believe]."\n\nAudience: ${ta}\nValue: ${uv}\nCompetitors: ${comp}\nCore values: ${cvNames}\nVoice: ${vtNames}\n\nReturn only the positioning statement.`);state.aiOutputs.aiPositioning=r;saveState();setAiResult("aiPositioning",r)}catch(e){document.getElementById("aiPositioning").innerHTML="Could not connect."}}
-function savePositioning(){Object.assign(state.brandKit,{targetAudience:document.getElementById("targetAudience")?.value||state.brandKit.targetAudience,uniqueValue:document.getElementById("uniqueValue")?.value||state.brandKit.uniqueValue,competitors:document.getElementById("competitors")?.value||state.brandKit.competitors,positioning:document.getElementById("positioning")?.value||state.brandKit.positioning});state.done.positioning=!!(state.brandKit.targetAudience&&state.brandKit.uniqueValue);saveState();goTo("messaging")}
+async function aiPos(){const bk=S.bk;const ta=document.getElementById("ta")?.value||bk.audience;const uvp=document.getElementById("uvp")?.value||bk.uvp;const comp=document.getElementById("comp")?.value||bk.competitors;Object.assign(S.bk,{audience:ta,uvp:uvp,competitors:comp});const cvn=CV.filter(v=>bk.coreValues.includes(v.id)).map(v=>v.name).join(", ");const vtn=VT.filter(t=>bk.voiceTraits.includes(t.id)).map(t=>t.name).join(", ");aiLoad("aiPos");try{const r=await claude(`Write a positioning statement: "For [audience] who [need], [Brand] is the [category] that [differentiator] because [reason]."\n\nAudience: ${ta}\nUVP: ${uvp}\nCompetitors: ${comp}\nValues: ${cvn}\nVoice: ${vtn}\n\nReturn only the positioning statement.`);S.ai.aiPos=r;save();aiSet("aiPos",r)}catch(e){document.getElementById("aiPos").innerHTML="Could not connect."}}
+function savePo(){Object.assign(S.bk,{audience:document.getElementById("ta")?.value||S.bk.audience,uvp:document.getElementById("uvp")?.value||S.bk.uvp,competitors:document.getElementById("comp")?.value||S.bk.competitors,positioning:document.getElementById("pos")?.value||S.bk.positioning});S.done.positioning=!!(S.bk.audience&&S.bk.uvp);save();go("messaging")}
 
-function renderMessaging(){
-  const bk=state.brandKit;
-  return progressBar()+`
+function rMessaging(){
+  const bk=S.bk;
+  return pbar()+`
   <div class="ex-header">
     <div class="ex-tag">Exercise 04</div>
     <div class="ex-title">Brand Messaging</div>
@@ -480,82 +412,71 @@ function renderMessaging(){
   <div class="card">
     <div class="card-title">Brand Tagline</div>
     <div class="card-desc">A short, memorable phrase capturing your brand essence.</div>
-    <input type="text" id="tagline" placeholder='e.g. "Grow efficiently. Grow effectively."' value="${esc(bk.tagline)}" oninput="state.brandKit.tagline=this.value;saveState()">
-    <div class="action-row"><button class="btn-ai" onclick="aiTagline()">&#10022; Generate 5 Options</button></div>
-    ${aiBox("aiTagline")}
+    <input type="text" id="tag" placeholder='e.g. "Grow efficiently. Grow effectively."' value="${esc(bk.tagline)}" oninput="S.bk.tagline=this.value;save()">
+    <div class="action-row"><button class="btn-ai" onclick="aiTag()">&#10022; Generate 5 Options</button></div>
+    ${abox("aiTag")}
   </div>
   <div class="card">
     <div class="card-title">Elevator Pitch</div>
-    <div class="card-desc">2-3 sentences for a networking event. Human, clear, no jargon.</div>
-    <textarea id="elevator" rows="4" placeholder="e.g. We're a nimble marketing agency built for early-stage startups..." oninput="state.brandKit.elevator=this.value;saveState()">${esc(bk.elevator)}</textarea>
-    <div class="action-row"><button class="btn-ai" onclick="aiElevator()">&#10022; Generate Pitch</button></div>
-    ${aiBox("aiElevator")}
+    <div class="card-desc">2-3 sentences. Human, clear, no jargon.</div>
+    <textarea id="elev" rows="4" placeholder="e.g. We're a nimble marketing agency built for early-stage startups..." oninput="S.bk.elevator=this.value;save()">${esc(bk.elevator)}</textarea>
+    <div class="action-row"><button class="btn-ai" onclick="aiElev()">&#10022; Generate Pitch</button></div>
+    ${abox("aiElev")}
   </div>
   <div class="card">
     <div class="card-title">Key Messages</div>
     <div class="card-desc">3 core messages grounded in your values and voice.</div>
-    <div class="action-row" style="margin-top:0;margin-bottom:10px"><button class="btn-ai" onclick="aiKeyMessages()">&#10022; Generate Key Messages</button></div>
-    ${aiBox("aiKeyMessages")}
-    <div class="action-row"><button class="btn-next" onclick="saveMessaging()">&#10003; Complete Brand Kit &rarr;</button></div>
+    <div class="action-row" style="margin-top:0;margin-bottom:10px"><button class="btn-ai" onclick="aiKM()">&#10022; Generate Key Messages</button></div>
+    ${abox("aiKM")}
+    <div class="action-row"><button class="btn-next" onclick="saveM()">&#10003; Complete Brand Kit &rarr;</button></div>
   </div>`;
 }
 
-async function aiTagline(){const bk=state.brandKit;const vtCtx=NOTION_VOICE_TRAITS.filter(t=>bk.voiceTraits.includes(t.id)).map(t=>`${t.name}: ${t.description}`).join("; ");setAiLoading("aiTagline");try{const r=await callClaude(`Generate 5 tagline options. Each 2-7 words, distinct styles.\n\nVision: ${bk.vision}\nValues: ${NOTION_CORE_VALUES.filter(v=>bk.coreValues.includes(v.id)).map(v=>v.name).join(", ")}\nVoice: ${vtCtx}\nPositioning: ${bk.positioning||bk.uniqueValue}\n\n5 numbered taglines only.`);state.aiOutputs.aiTagline=r;saveState();setAiResult("aiTagline",r)}catch(e){document.getElementById("aiTagline").innerHTML="Could not connect."}}
-async function aiElevator(){const bk=state.brandKit;state.brandKit.tagline=document.getElementById("tagline")?.value||bk.tagline;const vtDos=NOTION_VOICE_TRAITS.filter(t=>bk.voiceTraits.includes(t.id)).map(t=>t.dos).join(" ");setAiLoading("aiElevator");try{const r=await callClaude(`Write a 2-3 sentence elevator pitch. Voice guidelines: ${vtDos}\n\nVision: ${bk.vision}\nAudience: ${bk.targetAudience}\nValue: ${bk.uniqueValue}\n\nPitch only.`);state.aiOutputs.aiElevator=r;saveState();setAiResult("aiElevator",r)}catch(e){document.getElementById("aiElevator").innerHTML="Could not connect."}}
-async function aiKeyMessages(){const bk=state.brandKit;const cvNames=NOTION_CORE_VALUES.filter(v=>bk.coreValues.includes(v.id)).map(v=>v.name).join("; ");const vtNames=NOTION_VOICE_TRAITS.filter(t=>bk.voiceTraits.includes(t.id)).map(t=>t.name).join(", ");setAiLoading("aiKeyMessages");try{const r=await callClaude(`Generate 3 core brand messages grounded in these values: ${cvNames}. Written in this voice: ${vtNames}.\n\nAudience: ${bk.targetAudience}\nUVP: ${bk.uniqueValue}\n\n3 numbered messages only.`);state.aiOutputs.aiKeyMessages=r;saveState();setAiResult("aiKeyMessages",r)}catch(e){document.getElementById("aiKeyMessages").innerHTML="Could not connect."}}
-function saveMessaging(){Object.assign(state.brandKit,{tagline:document.getElementById("tagline")?.value||state.brandKit.tagline,elevator:document.getElementById("elevator")?.value||state.brandKit.elevator});state.done.messaging=!!(state.brandKit.tagline||state.brandKit.elevator);saveState();goTo("summary")}
+async function aiTag(){const bk=S.bk;const vtx=VT.filter(t=>bk.voiceTraits.includes(t.id)).map(t=>t.name+": "+t.description).join("; ");aiLoad("aiTag");try{const r=await claude(`Generate 5 tagline options (2-7 words each, distinct styles).\n\nVision: ${bk.vision}\nValues: ${CV.filter(v=>bk.coreValues.includes(v.id)).map(v=>v.name).join(", ")}\nVoice: ${vtx}\nPositioning: ${bk.positioning||bk.uvp}\n\n5 numbered taglines only.`);S.ai.aiTag=r;save();aiSet("aiTag",r)}catch(e){document.getElementById("aiTag").innerHTML="Could not connect."}}
+async function aiElev(){const bk=S.bk;S.bk.tagline=document.getElementById("tag")?.value||bk.tagline;const dos=VT.filter(t=>bk.voiceTraits.includes(t.id)).map(t=>t.dos).join(" ");aiLoad("aiElev");try{const r=await claude(`Write a 2-3 sentence elevator pitch.\nVoice guidelines: ${dos}\nVision: ${bk.vision}\nAudience: ${bk.audience}\nUVP: ${bk.uvp}\n\nPitch only.`);S.ai.aiElev=r;save();aiSet("aiElev",r)}catch(e){document.getElementById("aiElev").innerHTML="Could not connect."}}
+async function aiKM(){const bk=S.bk;const cvn=CV.filter(v=>bk.coreValues.includes(v.id)).map(v=>v.name).join("; ");const vtn=VT.filter(t=>bk.voiceTraits.includes(t.id)).map(t=>t.name).join(", ");aiLoad("aiKM");try{const r=await claude(`Generate 3 core brand messages grounded in these values: ${cvn}.\nWritten in this voice: ${vtn}.\nAudience: ${bk.audience}\nUVP: ${bk.uvp}\n\n3 numbered messages only.`);S.ai.aiKM=r;save();aiSet("aiKM",r)}catch(e){document.getElementById("aiKM").innerHTML="Could not connect."}}
+function saveM(){Object.assign(S.bk,{tagline:document.getElementById("tag")?.value||S.bk.tagline,elevator:document.getElementById("elev")?.value||S.bk.elevator});S.done.messaging=!!(S.bk.tagline||S.bk.elevator);save();go("summary")}
 
-function renderSummary(){
-  const bk=state.brandKit;
-  const allDone=Object.values(state.done).every(Boolean);
-  const nextId=EXERCISES.find(e=>!state.done[e.id])?.id;
-  const cvSelected=NOTION_CORE_VALUES.filter(v=>bk.coreValues.includes(v.id));
-  const vtSelected=NOTION_VOICE_TRAITS.filter(t=>bk.voiceTraits.includes(t.id));
-  const voiceRows=vtSelected.map(t=>`<div style="margin-bottom:10px"><strong style="font-size:12px;color:var(--navy)">${esc(t.name)}</strong><div style="font-size:12px;color:var(--muted);margin-top:2px">${esc(t.dos)}</div></div>`).join("");
+function rSummary(){
+  const bk=S.bk;const allDone=Object.values(S.done).every(Boolean);const nextId=EX.find(e=>!S.done[e.id])?.id;
+  const cvSel=CV.filter(v=>bk.coreValues.includes(v.id));const vtSel=VT.filter(t=>bk.voiceTraits.includes(t.id));
+  const vrows=vtSel.map(t=>`<div style="margin-bottom:8px"><strong style="font-size:12px;color:var(--navy)">${esc(t.name)}</strong><div style="font-size:12px;color:var(--muted);margin-top:2px">${esc(t.dos)}</div></div>`).join("");
   return`
-  <div class="ex-header">
-    <div class="ex-tag">Brand Kit</div>
-    <div class="ex-title">Your Brand Kit</div>
-    <div class="ex-desc">Your complete brand foundation, powered by Fivefoottwo's proprietary databases.</div>
-  </div>
+  <div class="ex-header"><div class="ex-tag">Brand Kit</div><div class="ex-title">Your Brand Kit</div><div class="ex-desc">Your complete brand foundation, powered by Fivefoottwo's proprietary databases.</div></div>
   ${allDone?`<div class="success-banner">&#10003; All four exercises complete. Your brand kit is ready.</div>`:""}
   <div class="card"><div class="card-title">Brand House</div><div class="kit-grid">
-    <div class="kit-item"><div class="kit-label">Vision</div><div class="kit-value">${esc(bk.vision||"—")}</div></div>
-    <div class="kit-item"><div class="kit-label">Mission</div><div class="kit-value">${esc(bk.mission||"—")}</div></div>
-    <div class="kit-item" style="grid-column:1/-1"><div class="kit-label">Core Values (${cvSelected.length})</div><div class="kit-value">${cvSelected.length?cvSelected.map(v=>`<span class="value-badge">${esc(v.name)}</span>`).join(""):"—"}</div></div>
+    <div class="kit-item"><div class="kit-lbl">Vision</div><div class="kit-val">${esc(bk.vision||"—")}</div></div>
+    <div class="kit-item"><div class="kit-lbl">Mission</div><div class="kit-val">${esc(bk.mission||"—")}</div></div>
+    <div class="kit-item" style="grid-column:1/-1"><div class="kit-lbl">Core Values (${cvSel.length})</div><div class="kit-val">${cvSel.length?cvSel.map(v=>`<span class="v-badge">${esc(v.name)}</span>`).join(""):"—"}</div></div>
   </div></div>
   <div class="card"><div class="card-title">Personality</div><div class="kit-grid">
-    <div class="kit-item"><div class="kit-label">Archetypes</div><div class="kit-value">${bk.archetypes.join(", ")||"—"}</div></div>
-    <div class="kit-item"><div class="kit-label">Voice Traits</div><div class="kit-value">${vtSelected.map(t=>t.name).join(", ")||"—"}</div></div>
-    ${voiceRows?`<div class="kit-item" style="grid-column:1/-1"><div class="kit-label">Voice Guidance</div><div class="kit-value">${voiceRows}</div></div>`:""}
+    <div class="kit-item"><div class="kit-lbl">Archetypes</div><div class="kit-val">${bk.archetypes.join(", ")||"—"}</div></div>
+    <div class="kit-item"><div class="kit-lbl">Voice Traits</div><div class="kit-val">${vtSel.map(t=>t.name).join(", ")||"—"}</div></div>
+    ${vrows?`<div class="kit-item" style="grid-column:1/-1"><div class="kit-lbl">Voice Guidance</div><div class="kit-val">${vrows}</div></div>`:""}
   </div></div>
   <div class="card"><div class="card-title">Positioning</div><div class="kit-grid">
-    <div class="kit-item"><div class="kit-label">Target Audience</div><div class="kit-value">${esc(bk.targetAudience||"—")}</div></div>
-    <div class="kit-item"><div class="kit-label">Unique Value</div><div class="kit-value">${esc(bk.uniqueValue||"—")}</div></div>
-    <div class="kit-item" style="grid-column:1/-1"><div class="kit-label">Positioning Statement</div><div class="kit-value">${esc(bk.positioning||"—")}</div></div>
+    <div class="kit-item"><div class="kit-lbl">Target Audience</div><div class="kit-val">${esc(bk.audience||"—")}</div></div>
+    <div class="kit-item"><div class="kit-lbl">Unique Value</div><div class="kit-val">${esc(bk.uvp||"—")}</div></div>
+    <div class="kit-item" style="grid-column:1/-1"><div class="kit-lbl">Positioning Statement</div><div class="kit-val">${esc(bk.positioning||"—")}</div></div>
   </div></div>
   <div class="card"><div class="card-title">Messaging</div><div class="kit-grid">
-    <div class="kit-item"><div class="kit-label">Tagline</div><div class="kit-value">${esc(bk.tagline||"—")}</div></div>
-    <div class="kit-item" style="grid-column:1/-1"><div class="kit-label">Elevator Pitch</div><div class="kit-value">${esc(bk.elevator||"—")}</div></div>
+    <div class="kit-item"><div class="kit-lbl">Tagline</div><div class="kit-val">${esc(bk.tagline||"—")}</div></div>
+    <div class="kit-item" style="grid-column:1/-1"><div class="kit-lbl">Elevator Pitch</div><div class="kit-val">${esc(bk.elevator||"—")}</div></div>
   </div></div>
   <div class="action-row" style="margin-top:8px">
     <button class="btn-export" onclick="exportKit()">&#8595; Export Brand Kit</button>
-    ${!allDone&&nextId?`<button class="btn-next" onclick="goTo('${nextId}')">Continue Building &rarr;</button>`:""}
+    ${!allDone&&nextId?`<button class="btn-next" onclick="go('${nextId}')">Continue Building &rarr;</button>`:""}
   </div>`;
 }
 
 function exportKit(){
-  const bk=state.brandKit;
-  const cvSelected=NOTION_CORE_VALUES.filter(v=>bk.coreValues.includes(v.id));
-  const vtSelected=NOTION_VOICE_TRAITS.filter(t=>bk.voiceTraits.includes(t.id));
-  const voiceGuide=vtSelected.map(t=>`  ${t.name}\n  Do's: ${t.dos}\n  Don'ts: ${t.donts}`).join("\n\n");
-  const txt=`FIVEFOOTTWO MARKETING — BRANDSAUCE BRAND KIT\n${"=".repeat(46)}\nGenerated: ${new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"})}\n\nBRAND HOUSE\nVision: ${bk.vision}\nMission: ${bk.mission}\nCore Values:\n${cvSelected.map(v=>"  • "+v.name).join("\n")}\n\nPERSONALITY\nArchetypes: ${bk.archetypes.join(", ")}\nVoice Traits: ${vtSelected.map(t=>t.name).join(", ")}\n\nVOICE GUIDE\n${voiceGuide}\n\nPOSITIONING\nTarget Audience: ${bk.targetAudience}\nUnique Value: ${bk.uniqueValue}\nPositioning Statement: ${bk.positioning}\n\nMESSAGING\nTagline: ${bk.tagline}\nElevator Pitch: ${bk.elevator}\n`;
-  const a=Object.assign(document.createElement("a"),{href:URL.createObjectURL(new Blob([txt],{type:"text/plain"})),download:`fivefoottwo-brand-kit-${new Date().toISOString().slice(0,10)}.txt`});
-  a.click();
+  const bk=S.bk;const cvSel=CV.filter(v=>bk.coreValues.includes(v.id));const vtSel=VT.filter(t=>bk.voiceTraits.includes(t.id));
+  const vg=vtSel.map(t=>`  ${t.name}\n  Do's: ${t.dos}\n  Don'ts: ${t.donts}`).join("\n\n");
+  const txt=`FIVEFOOTTWO MARKETING — BRANDSAUCE BRAND KIT\n${"=".repeat(46)}\nGenerated: ${new Date().toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"})}\n\nBRAND HOUSE\nVision: ${bk.vision}\nMission: ${bk.mission}\nCore Values:\n${cvSel.map(v=>"  • "+v.name).join("\n")}\n\nPERSONALITY\nArchetypes: ${bk.archetypes.join(", ")}\nVoice Traits: ${vtSel.map(t=>t.name).join(", ")}\n\nVOICE GUIDE\n${vg}\n\nPOSITIONING\nTarget Audience: ${bk.audience}\nUnique Value: ${bk.uvp}\nPositioning Statement: ${bk.positioning}\n\nMESSAGING\nTagline: ${bk.tagline}\nElevator Pitch: ${bk.elevator}\n`;
+  const a=Object.assign(document.createElement("a"),{href:URL.createObjectURL(new Blob([txt],{type:"text/plain"})),download:`fivefoottwo-brand-kit-${new Date().toISOString().slice(0,10)}.txt`});a.click();
 }
 
-loadState();
-render();
+load();render();
 </script>
 </body>
 </html>
